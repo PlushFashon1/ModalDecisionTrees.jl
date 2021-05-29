@@ -97,7 +97,7 @@ gamma (soft minmax 80%):
 Ora vediamo se sono gli operatori soft/hard che fan la differenza.
 
 modalDataset (soft minmax 80%):
-  2.529470 seconds (25.46 M allocations: 3.395 GiB, 28.28% gc time)
+	2.529470 seconds (25.46 M allocations: 3.395 GiB, 28.28% gc time)
  76.203804 seconds (1.76 G allocations: 57.589 GiB, 27.26% gc time)
 
 No sembra che non facciano differenza... Dunque effettivamente questa nuova struttura salva sia spazio che tempo di calcolo. E in quanto a tempo di lettura? Va be', per quello guarderemo meglio dopo...
@@ -116,16 +116,16 @@ modalDataset:
 	2.094 s (23524781 allocations: 3.30 GiB)
 
 without enumAccReprAggr ?
-  13.986 s (336237900 allocations: 13.17 GiB)
-  14.435 s (347827500 allocations: 13.52 GiB)
-  17.618 s (347827498 allocations: 13.52 GiB)
+	13.986 s (336237900 allocations: 13.17 GiB)
+	14.435 s (347827500 allocations: 13.52 GiB)
+	17.618 s (347827498 allocations: 13.52 GiB)
 
 
 hard operators. but note that 
 
 gammas:
-  10.350 s (226753747 allocations: 10.52 GiB)
-  9.941 s (226753747 allocations: 10.52 GiB)
+	10.350 s (226753747 allocations: 10.52 GiB)
+	9.941 s (226753747 allocations: 10.52 GiB)
 modalDataset:
 without enumAccReprAggr
 with enumAccReprAggr
@@ -133,13 +133,13 @@ with enumAccReprAggr
 hard operators, 30 points and 5 features instead of (10,40)
 
 gammas:
-  87.672 s (2016611162 allocations: 92.01 GiB)
+	87.672 s (2016611162 allocations: 92.01 GiB)
 modalDataset:
 with enumAccReprAggr
-  1.583 s (27361641 allocations: 1.89 GiB)
-  78.647 s (2636970839 allocations: 103.97 GiB)
+	1.583 s (27361641 allocations: 1.89 GiB)
+	78.647 s (2636970839 allocations: 103.97 GiB)
 without enumAccReprAggr
-  37.783 s (1430625179 allocations: 38.52 GiB)
+	37.783 s (1430625179 allocations: 38.52 GiB)
 
 Oh yes, now we're talking. 
 
@@ -165,3 +165,23 @@ without enumAccReprAggr optimization
  45.413 s (1684340815 allocations: 56.46 GiB)
 
 No vabbe' muoio di gioia allora...
+
+###################################################################################################################
+
+btime, 3 punti, 40 features, hard
+
+Gammas:
+	1.333 s (34647346 allocations: 1.88 GiB)
+ModalDataset:
+	131.202 ms (2998600 allocations: 224.44 MiB)
+	1.935 s (45062422 allocations: 1.69 GiB)
+
+btime, 15 punti, 10 features, hard
+
+Gammas:
+  36.182 s (863119137 allocations: 43.16 GiB)
+ModalDataset:
+  674.522 ms (15499564 allocations: 1.04 GiB)
+  17.987 s (509520347 allocations: 15.71 GiB)
+
+Direi che ne è valsa la pena.

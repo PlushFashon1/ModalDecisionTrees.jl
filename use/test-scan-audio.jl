@@ -100,9 +100,9 @@ log_level = DecisionTree.DTOverview
 # log_level = DecisionTree.DTDebug
 # log_level = DecisionTree.DTDetail
 
-timing_mode = :none
+# timing_mode = :none
 # timing_mode = :time
-# timing_mode = :btime
+timing_mode = :btime
 
 #round_dataset_to_datatype = Float32
 # round_dataset_to_datatype = UInt16
@@ -137,13 +137,13 @@ test_flattened = false
 exec_runs = 1
 exec_n_tasks = 1
 exec_n_versions = 1
-exec_nbands = 40
+exec_nbands = 10
 # exec_runs = 1:5
 # exec_n_tasks = 1:1
 # exec_n_versions = 1:2
 # exec_nbands = [20,40,60]
 exec_dataset_kwargs =   [(
-							max_points = 3,
+							max_points = 15,
 							ma_size = 75,
 							ma_step = 50,
 						# ),(
