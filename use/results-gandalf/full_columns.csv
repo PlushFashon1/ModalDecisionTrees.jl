@@ -1,0 +1,5 @@
+;T(entropy,4,0.01,0.3)K;T(entropy,4,0.01,0.3)sensitivity;T(entropy,4,0.01,0.3)specificity;T(entropy,4,0.01,0.3)precision;T(entropy,4,0.01,0.3)accuracy;T(entropy,4,0.01,0.3)t;
+Pavia,(1,false,"o_None","TestOpGeq"),1;74.38;85.0;96.25;73.91;77.22;00:00:16;
+Pavia,(3,:flattened,"o_None","TestOpGeq"),1;39.38;45.0;93.12;45.0;46.11;00:02:32;
+Pavia,(3,:averaged,"o_None","TestOpGeq"),1;78.75;70.0;97.5;77.78;81.11;00:00:11;
+Pavia,(3,false,"o_RCC8","TestOpAll"),1;81.25;90.0;96.25;75.0;83.33;00:17:29;
