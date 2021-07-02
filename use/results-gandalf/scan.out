@@ -1,0 +1,1144 @@
+  Activating environment at `~/DecisionTree.jl/Project.toml`
+ 1 trees
+ 0 forests 
+Loading history file "./results-gandalf/progress.json"...
+Iteration "Pavia,(1,false,"o_None","TestOpGeq"),1": skipping
+Iteration "Pavia,(3,:flattened,"o_None","TestOpGeq"),1"...
+
+executing run 'Pavia,(3,:flattened,"o_None","TestOpGeq"),1'...
+dataset type = Tuple{Matrix{Int64}, Vector{String}}
+
+train_seed   = 1
+modal_args   = (initConditions = DecisionTree._startAtCenter(), useRelationGlob = false)
+tree_args    = Any[(loss_function = DecisionTree.util.entropy, min_samples_leaf = 4, min_purity_increase = 0.01, min_loss_at_leaf = 0.3)]
+forest_args  = Any[]
+forest_runs  = 5
+
+split_threshold   = 0.8
+data_modal_args   = (ontology = OneWorldOntology, test_operators = [⫺])
+dataset_slice   = [10, 122, 267, 386, 478, 583, 633, 707, 810, 3, 166, 252, 331, 497, 503, 670, 754, 819, 27, 190, 228, 353, 403, 521, 606, 735, 887, 63, 130, 246, 366, 462, 566, 687, 712, 872, 50, 195, 235, 350, 474, 501, 671, 769, 829, 57, 186, 201, 397, 447, 511, 660, 778, 843, 36, 116, 254, 326, 457, 542, 622, 766, 867, 21, 123, 248, 340, 469, 593, 666, 720, 868, 75, 157, 258, 336, 417, 509, 634, 704, 854, 78, 183, 238, 394, 408, 596, 624, 759, 862, 35, 154, 264, 376, 477, 599, 697, 748, 865, 66, 191, 274, 307, 448, 548, 602, 787, 823, 20, 167, 215, 392, 467, 549, 650, 795, 875, 67, 188, 239, 310, 434, 568, 682, 775, 890, 25, 141, 231, 330, 490, 594, 678, 732, 871, 24, 117, 270, 400, 492, 592, 668, 750, 816, 82, 194, 226, 387, 455, 560, 690, 793, 825, 74, 197, 289, 378, 441, 565, 683, 788, 896, 69, 105, 227, 341, 461, 539, 636, 705, 822, 81, 187, 300, 388, 427, 585, 646, 776, 811, 28, 159, 210, 342, 405, 531, 675, 710, 856, 15, 179, 244, 323, 420, 554, 618, 714, 830, 59, 163, 223, 332, 416, 558, 661, 740, 878, 29, 124, 268, 351, 459, 564, 601, 786, 820, 18, 153, 232, 329, 500, 582, 673, 767, 847, 31, 162, 220, 319, 418, 535, 685, 791, 821, 43, 177, 288, 346, 465, 576, 681, 770, 876, 40, 155, 249, 325, 470, 575, 625, 784, 860, 12, 149, 205, 327, 496, 578, 651, 718, 848, 83, 192, 275, 305, 464, 597, 665, 774, 836, 100, 145, 247, 398, 415, 508, 688, 746, 888, 94, 178, 261, 322, 488, 519, 607, 717, 824, 16, 110, 291, 347, 485, 551, 680, 722, 849, 51, 119, 204, 337, 466, 590, 612, 796, 894, 73, 148, 297, 362, 449, 522, 611, 749, 885, 19, 103, 292, 358, 425, 533, 623, 800, 801, 8, 142, 213, 382, 499, 530, 684, 785, 846, 11, 134, 207, 345, 472, 598, 628, 761, 827, 95, 136, 296, 357, 407, 515, 652, 701, 881, 58, 169, 284, 339, 458, 595, 632, 709, 899, 72, 101, 241, 321, 491, 581, 603, 777, 898, 13, 127, 230, 349, 432, 550, 620, 723, 863, 53, 172, 240, 301, 435, 555, 657, 757, 813, 22, 200, 285, 335, 483, 532, 663, 744, 859, 71, 176, 260, 379, 437, 517, 643, 782, 869, 87, 139, 202, 399, 439, 514, 672, 702, 855, 33, 160, 299, 389, 451, 544, 674, 727, 828, 61, 168, 208, 343, 480, 540, 617, 781, 808, 90, 180, 233, 309, 428, 586, 629, 772, 897, 55, 175, 216, 348, 476, 518, 613, 731, 886, 60, 137, 290, 383, 443, 573, 637, 711, 900, 96, 198, 211, 308, 456, 552, 610, 706, 852, 68, 144, 214, 317, 431, 563, 692, 733, 806, 77, 189, 203, 315, 471, 507, 669, 789, 832, 9, 135, 279, 361, 473, 536, 621, 743, 858, 42, 147, 221, 352, 481, 553, 698, 762, 834, 64, 115, 287, 391, 423, 528, 604, 763, 835, 85, 196, 256, 390, 453, 516, 614, 752, 818, 54, 182, 280, 359, 442, 588, 689, 783, 837, 2, 140, 245, 320, 429, 541, 609, 726, 805, 23, 170, 272, 313, 402, 559, 656, 764, 839, 91, 104, 269, 324, 413, 538, 642, 737, 833, 65, 181, 257, 344, 414, 505, 619, 758, 857, 48, 132, 224, 367, 487, 523, 638, 742, 826, 70, 173, 271, 303, 444, 589, 658, 779, 804, 80, 118, 276, 338, 460, 570, 644, 794, 895, 49, 171, 265, 333, 454, 577, 677, 773, 817, 7, 120, 281, 360, 438, 572, 694, 768, 807, 88, 193, 218, 372, 482, 584, 635, 753, 873, 45, 121, 229, 381, 475, 510, 676, 771, 866, 14, 174, 236, 364, 450, 534, 645, 741, 844, 97, 128, 283, 304, 436, 562, 695, 751, 841, 26, 111, 243, 311, 463, 561, 653, 729, 883, 52, 112, 294, 302, 412, 506, 654, 797, 851, 4, 158, 234, 384, 410, 569, 648, 721, 861, 32, 150, 253, 371, 409, 512, 616, 780, 870, 34, 146, 277, 374, 493, 579, 699, 765, 893, 99, 125, 266, 380, 430, 504, 631, 798, 802, 93, 102, 206, 363, 422, 587, 659, 792, 842, 56, 152, 286, 375, 445, 513, 630, 715, 882, 46, 113, 250, 306, 498, 524, 627, 730, 812, 47, 185, 263, 373, 404, 525, 679, 716, 850, 84, 108, 242, 385, 419, 600, 691, 760, 877, 79, 129, 217, 318, 486, 546, 655, 734, 840, 39, 156, 282, 365, 494, 591, 640, 799, 815, 17, 114, 251, 312, 468, 574, 615, 756, 838, 38, 143, 225, 369, 452, 556, 700, 790, 880, 5, 151, 212, 368, 426, 502, 649, 736, 809, 44, 138, 278, 355, 433, 526, 641, 724, 831, 98, 126, 237, 395, 489, 529, 693, 713, 889, 86, 109, 273, 334, 421, 537, 608, 755, 853, 92, 199, 262, 354, 479, 527, 647, 725, 803, 41, 184, 209, 328, 446, 547, 605, 719, 814, 89, 107, 259, 370, 411, 567, 664, 703, 891, 6, 131, 222, 377, 495, 545, 639, 708, 845, 1, 106, 295, 314, 401, 557, 667, 747, 864, 76, 161, 255, 396, 406, 520, 686, 738, 879, 37, 164, 298, 393, 484, 543, 696, 739, 884, 30, 133, 219, 356, 440, 580, 626, 745, 874, 62, 165, 293, 316, 424, 571, 662, 728, 892]
+
+Frame 1/1
+● [ 26/06/2021 17:10:32 ] Loading stump_fmd from file "./results-gandalf/gammas/stump_fmd_92bbf09f5ba4ffc3e4b65a3f9ef1cbd9ae8037a731788e2eff9c1d7cdf704ee7.jld"...
+X_train:
+  MultiFrameFeatModalDataset
+  └ [1] StumpFeatModalDataset{Float32, OneWorld}	3.76 MBs
+     ├ fmd	3.76 MBs	(shape (900, 927))
+     ├ fmd_m	0.0 MBs	(shape (900, 927, 0))
+     └ fmd_g	0.0 MBs		−
+
+train dataset:
+  MultiFrameFeatModalDataset
+  └ [1] StumpFeatModalDataset{Float32, OneWorld}	3.1 MBs
+     ├ fmd	3.1 MBs	(shape (720, 927))
+     ├ fmd_m	0.0 MBs	(shape (720, 927, 0))
+     └ fmd_g	0.0 MBs		−
+
+test  dataset:
+  MultiFrameOntologicalDataset
+  └ [1] OntologicalDataset{Float32, 0, OneWorld, 2}	0.64 MBs
+     ├ domain shape	(927, 180)
+     ├ 0 relations	AbstractRelation[]
+     └ max_channel_size	()
+
+● [ 26/06/2021 17:10:36 ] Computing tree 1 / 1...
+┌ LogLevel(-500):  Branch (240+480=720 samples) on frame 1 with decision: {1} A927 ⫺ 356.0, purity -2.110485011131842
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (80+160=240 samples) on frame 1 with decision: {1} A846 ⫺ 262.0, purity -1.8083921895569148
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (44+36=80 samples) on frame 1 with decision: {1} A894 ⫺ 1960.0, purity -1.2182687230287634
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (13+31=44 samples) on frame 1 with decision: {1} A211 ⫺ 303.0, purity -0.6450855501829653
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (18+13=31 samples) on frame 1 with decision: {1} A315 ⫺ 110.0, purity -0.45828378051194674
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (5+8=13 samples) on frame 1 with decision: {1} A12 ⫺ 1211.0, purity -0.5995783094580611
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+4=8 samples) on frame 1 with decision: {1} A11 ⫺ 680.0, purity -0.28116757230940415
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (24+12=36 samples) on frame 1 with decision: {1} A673 ⫺ 1478.0, purity -0.7002685144688551
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (10+14=24 samples) on frame 1 with decision: {1} A864 ⫺ 232.0, purity -0.3586035501248135
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+4=10 samples) on frame 1 with decision: {1} A1 ⫺ 1159.0, purity -0.277258872223978
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (53+107=160 samples) on frame 1 with decision: {1} A605 ⫺ 940.0, purity -1.7502092590836067
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (15+38=53 samples) on frame 1 with decision: {1} A105 ⫺ 556.0, purity -1.2735113976349222
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+11=15 samples) on frame 1 with decision: {1} A809 ⫺ 2020.0, purity -0.37335584328779003
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+4=11 samples) on frame 1 with decision: {1} A2 ⫺ 753.0, purity -0.2044855071341121
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (19+19=38 samples) on frame 1 with decision: {1} A871 ⫺ 1517.0, purity -0.9727481184628886
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (9+10=19 samples) on frame 1 with decision: {1} A711 ⫺ 248.0, purity -0.5731052501816967
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+4=10 samples) on frame 1 with decision: {1} A126 ⫺ 166.0, purity -0.41588830833596707
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (10+9=19 samples) on frame 1 with decision: {1} A359 ⫺ 1913.0, purity -0.26336969659904647
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+6=10 samples) on frame 1 with decision: {1} A4 ⫺ 677.0, purity -0.277258872223978
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (28+79=107 samples) on frame 1 with decision: {1} A894 ⫺ 1632.0, purity -1.4826622685116715
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (22+6=28 samples) on frame 1 with decision: {1} A101 ⫺ 648.0, purity -0.362013870354828
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (49+30=79 samples) on frame 1 with decision: {1} A894 ⫺ 1941.0, purity -1.365508783698038
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (29+20=49 samples) on frame 1 with decision: {1} A127 ⫺ 1085.0, purity -1.2451306236041517
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (20+9=29 samples) on frame 1 with decision: {1} A520 ⫺ 1553.0, purity -0.7854593407264715
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+14=20 samples) on frame 1 with decision: {1} A720 ⫺ 228.0, purity -0.4835443277928876
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (5+4=9 samples) on frame 1 with decision: {1} A1 ⫺ 935.0, purity -0.24992673094169257
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (15+5=20 samples) on frame 1 with decision: {1} A638 ⫺ 2066.0, purity -0.7707391488579705
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+4=15 samples) on frame 1 with decision: {1} A209 ⫺ 799.0, purity -0.37335584328779003
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+4=11 samples) on frame 1 with decision: {1} A1 ⫺ 1266.0, purity -0.2044855071341121
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+19=30 samples) on frame 1 with decision: {1} A213 ⫺ 1036.0, purity -0.2148492933779687
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+4=11 samples) on frame 1 with decision: {1} A14 ⫺ 2888.0, purity -0.2044855071341121
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (264+216=480 samples) on frame 1 with decision: {1} A118 ⫺ 1062.0, purity -2.0453596692838203
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (106+158=264 samples) on frame 1 with decision: {1} A921 ⫺ 1808.0, purity -1.8505611389779422
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (35+71=106 samples) on frame 1 with decision: {1} A271 ⫺ 993.0, purity -1.568947692717658
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (12+23=35 samples) on frame 1 with decision: {1} A96 ⫺ 469.0, purity -0.7957093124998491
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (13+10=23 samples) on frame 1 with decision: {1} A143 ⫺ 1500.0, purity -0.7404653183399545
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (8+5=13 samples) on frame 1 with decision: {1} A74 ⫺ 637.0, purity -0.2588506411574063
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+6=10 samples) on frame 1 with decision: {1} A13 ⫺ 607.0, purity -0.277258872223978
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (28+43=71 samples) on frame 1 with decision: {1} A659 ⫺ 1915.0, purity -1.2626427931177922
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (16+12=28 samples) on frame 1 with decision: {1} A524 ⫺ 914.0, purity -0.3091987228682192
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (8+4=12 samples) on frame 1 with decision: {1} A17 ⫺ 1282.0, purity -0.34657359027997264
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (28+15=43 samples) on frame 1 with decision: {1} A613 ⫺ 1204.0, purity -1.0298230195092346
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+22=28 samples) on frame 1 with decision: {1} A342 ⫺ 100.0, purity -0.37253803168830085
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (17+5=22 samples) on frame 1 with decision: {1} A44 ⫺ 1525.0, purity -0.11372782353140633
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+4=15 samples) on frame 1 with decision: {1} A856 ⫺ 1568.0, purity -0.7069574589799156
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+4=11 samples) on frame 1 with decision: {1} A49 ⫺ 487.0, purity -0.2044855071341121
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (125+33=158 samples) on frame 1 with decision: {1} A659 ⫺ 2267.0, purity -1.6030411431155984
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (94+31=125 samples) on frame 1 with decision: {1} A398 ⫺ 1127.0, purity -1.4053319713203232
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (38+56=94 samples) on frame 1 with decision: {1} A810 ⫺ 397.0, purity -1.1634947258756245
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+27=38 samples) on frame 1 with decision: {1} A37 ⫺ 852.0, purity -1.1603112818713646
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+4=11 samples) on frame 1 with decision: {1} A17 ⫺ 1372.0, purity -0.2044855071341121
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (14+13=27 samples) on frame 1 with decision: {1} A921 ⫺ 1934.0, purity -0.8652390152535139
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (10+4=14 samples) on frame 1 with decision: {1} A31 ⫺ 499.0, purity -0.39608410317711157
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+6=13 samples) on frame 1 with decision: {1} A24 ⫺ 539.0, purity -0.29377576998222127
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (48+8=56 samples) on frame 1 with decision: {1} A668 ⫺ 2380.0, purity -0.6356405417771521
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (8+40=48 samples) on frame 1 with decision: {1} A902 ⫺ 2239.0, purity -0.3245642151177656
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+4=8 samples) on frame 1 with decision: {1} A1 ⫺ 1071.0, purity -0.28116757230940415
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (36+4=40 samples) on frame 1 with decision: {1} A181 ⫺ 1103.0, purity -0.10397207708399178
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+4=8 samples) on frame 1 with decision: {1} A1 ⫺ 1106.0, purity -0.28116757230940415
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (16+15=31 samples) on frame 1 with decision: {1} A528 ⫺ 1715.0, purity -0.7713530226765114
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (8+8=16 samples) on frame 1 with decision: {1} A105 ⫺ 645.0, purity -0.3465735902799726
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+4=8 samples) on frame 1 with decision: {1} A12 ⫺ 1255.0, purity -0.0
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+4=15 samples) on frame 1 with decision: {1} A13 ⫺ 663.0, purity -0.2772588722239781
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+27=33 samples) on frame 1 with decision: {1} A258 ⫺ 711.0, purity -0.8692762835355451
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (8+19=27 samples) on frame 1 with decision: {1} A98 ⫺ 1404.0, purity -0.6062243157953657
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+4=8 samples) on frame 1 with decision: {1} A1 ⫺ 1105.0, purity -0.6931471805599453
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+15=19 samples) on frame 1 with decision: {1} A4 ⫺ 458.0, purity -0.21888858333471956
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (110+106=216 samples) on frame 1 with decision: {1} A672 ⫺ 2064.0, purity -1.8281932017661642
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (42+68=110 samples) on frame 1 with decision: {1} A777 ⫺ 1867.0, purity -1.3950633740115557
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (19+23=42 samples) on frame 1 with decision: {1} A160 ⫺ 1386.0, purity -0.7145099079828011
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (12+7=19 samples) on frame 1 with decision: {1} A206 ⫺ 1702.0, purity -0.35209995988356524
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+19=23 samples) on frame 1 with decision: {1} A74 ⫺ 406.0, purity -0.18082100362433354
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (58+10=68 samples) on frame 1 with decision: {1} A843 ⫺ 2592.0, purity -1.0724128623769726
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+51=58 samples) on frame 1 with decision: {1} A281 ⫺ 784.0, purity -1.0122544476525317
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (27+24=51 samples) on frame 1 with decision: {1} A41 ⫺ 4134.0, purity -0.8214332101218024
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (12+15=27 samples) on frame 1 with decision: {1} A650 ⫺ 1997.0, purity -0.5080670001240578
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (8+4=12 samples) on frame 1 with decision: {1} A25 ⫺ 1164.0, purity -0.46209812037329684
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (12+12=24 samples) on frame 1 with decision: {1} A431 ⫺ 2018.0, purity -0.14341799152808044
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (62+44=106 samples) on frame 1 with decision: {1} A395 ⫺ 1914.0, purity -1.728602329421898
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (28+34=62 samples) on frame 1 with decision: {1} A356 ⫺ 3059.0, purity -1.5013954964747185
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (21+7=28 samples) on frame 1 with decision: {1} A299 ⫺ 1100.0, purity -0.8202719288620999
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (17+4=21 samples) on frame 1 with decision: {1} A269 ⫺ 1731.0, purity -0.37914716078470706
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+23=34 samples) on frame 1 with decision: {1} A668 ⫺ 1900.0, purity -1.2214652526088592
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+4=11 samples) on frame 1 with decision: {1} A74 ⫺ 573.0, purity -0.2044855071341121
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (16+7=23 samples) on frame 1 with decision: {1} A685 ⫺ 1556.0, purity -0.9379233508590881
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+12=16 samples) on frame 1 with decision: {1} A73 ⫺ 1078.0, purity -0.34657359027997264
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (25+19=44 samples) on frame 1 with decision: {1} A917 ⫺ 1981.0, purity -1.1067644739200484
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (13+12=25 samples) on frame 1 with decision: {1} A551 ⫺ 1040.0, purity -0.7415212551199911
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+9=13 samples) on frame 1 with decision: {1} A693 ⫺ 299.0, purity -0.5397458746149328
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (5+4=9 samples) on frame 1 with decision: {1} A2 ⫺ 695.0, purity -0.3080654135821979
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+8=12 samples) on frame 1 with decision: {1} A5 ⫺ 2717.0, purity -0.23104906018664842
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (10+9=19 samples) on frame 1 with decision: {1} A690 ⫺ 2445.0, purity -0.3542166668469771
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+6=10 samples) on frame 1 with decision: {1} A3 ⫺ 1160.0, purity 1.3322676295501878e-16
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+ 92.394031 seconds (1.09 G allocations: 19.602 GiB, 3.35% gc time, 5.63% compilation time)
+Train tree:
+Decision Tree
+Leaves: 94
+Tot nodes: 187
+Height: 9
+Modal height:  0
+worldTypes: DataType[OneWorld]
+initConditions: [DecisionTree._startAtCenter()]
+{1} A927 ⫺ 356.0
+✔ {1} A118 ⫺ 1062.0
+│✔ {1} A672 ⫺ 2064.0
+││✔ {1} A395 ⫺ 1914.0
+│││✔ {1} A917 ⫺ 1981.0
+││││✔ {1} A690 ⫺ 2445.0
+│││││✔ Meadows : 9/9 (conf: 1.0)
+│││││✘ {1} A3 ⫺ 1160.0
+│││││ ✔ Painted metal sheets : 6/6 (conf: 1.0)
+│││││ ✘ Bitumen : 4/4 (conf: 1.0)
+││││✘ {1} A551 ⫺ 1040.0
+││││ ✔ {1} A5 ⫺ 2717.0
+││││ │✔ Bare Soil : 8/8 (conf: 1.0)
+││││ │✘ Self-Blocking Bricks : 2/4 (conf: 0.5)
+││││ ✘ {1} A693 ⫺ 299.0
+││││  ✔ {1} A2 ⫺ 695.0
+││││  │✔ Bitumen : 2/4 (conf: 0.5)
+││││  │✘ Bitumen : 5/5 (conf: 1.0)
+││││  ✘ Bare Soil : 3/4 (conf: 0.75)
+│││✘ {1} A356 ⫺ 3059.0
+│││ ✔ {1} A668 ⫺ 1900.0
+│││ │✔ {1} A685 ⫺ 1556.0
+│││ ││✔ Bitumen : 3/7 (conf: 0.42857142857142855)
+│││ ││✘ {1} A73 ⫺ 1078.0
+│││ ││ ✔ Gravel : 12/12 (conf: 1.0)
+│││ ││ ✘ Bitumen : 1/4 (conf: 0.25)
+│││ │✘ {1} A74 ⫺ 573.0
+│││ │ ✔ Meadows : 3/4 (conf: 0.75)
+│││ │ ✘ Bare Soil : 7/7 (conf: 1.0)
+│││ ✘ {1} A299 ⫺ 1100.0
+│││  ✔ Gravel : 4/7 (conf: 0.5714285714285714)
+│││  ✘ {1} A269 ⫺ 1731.0
+│││   ✔ Self-Blocking Bricks : 2/4 (conf: 0.5)
+│││   ✘ Shadows : 16/17 (conf: 0.9411764705882353)
+││✘ {1} A777 ⫺ 1867.0
+││ ✔ {1} A843 ⫺ 2592.0
+││ │✔ Painted metal sheets : 10/10 (conf: 1.0)
+││ │✘ {1} A281 ⫺ 784.0
+││ │ ✔ {1} A41 ⫺ 4134.0
+││ │ │✔ {1} A431 ⫺ 2018.0
+││ │ ││✔ Bitumen : 11/12 (conf: 0.9166666666666666)
+││ │ ││✘ Self-Blocking Bricks : 12/12 (conf: 1.0)
+││ │ │✘ {1} A650 ⫺ 1997.0
+││ │ │ ✔ Bitumen : 14/15 (conf: 0.9333333333333333)
+││ │ │ ✘ {1} A25 ⫺ 1164.0
+││ │ │  ✔ Self-Blocking Bricks : 1/4 (conf: 0.25)
+││ │ │  ✘ Bare Soil : 8/8 (conf: 1.0)
+││ │ ✘ Shadows : 6/7 (conf: 0.8571428571428571)
+││ ✘ {1} A160 ⫺ 1386.0
+││  ✔ {1} A74 ⫺ 406.0
+││  │✔ Self-Blocking Bricks : 19/19 (conf: 1.0)
+││  │✘ Bitumen : 2/4 (conf: 0.5)
+││  ✘ {1} A206 ⫺ 1702.0
+││   ✔ Painted metal sheets : 4/7 (conf: 0.5714285714285714)
+││   ✘ Trees : 12/12 (conf: 1.0)
+│✘ {1} A921 ⫺ 1808.0
+│ ✔ {1} A659 ⫺ 2267.0
+│ │✔ {1} A258 ⫺ 711.0
+│ ││✔ {1} A98 ⫺ 1404.0
+│ │││✔ {1} A4 ⫺ 458.0
+│ ││││✔ Asphalt : 15/15 (conf: 1.0)
+│ ││││✘ Asphalt : 2/4 (conf: 0.5)
+│ │││✘ {1} A1 ⫺ 1105.0
+│ │││ ✔ Bare Soil : 4/4 (conf: 1.0)
+│ │││ ✘ Self-Blocking Bricks : 1/4 (conf: 0.25)
+│ ││✘ Shadows : 6/6 (conf: 1.0)
+│ │✘ {1} A398 ⫺ 1127.0
+│ │ ✔ {1} A528 ⫺ 1715.0
+│ │ │✔ {1} A13 ⫺ 663.0
+│ │ ││✔ Trees : 2/4 (conf: 0.5)
+│ │ ││✘ Trees : 11/11 (conf: 1.0)
+│ │ │✘ {1} A105 ⫺ 645.0
+│ │ │ ✔ Bare Soil : 8/8 (conf: 1.0)
+│ │ │ ✘ {1} A12 ⫺ 1255.0
+│ │ │  ✔ Self-Blocking Bricks : 4/4 (conf: 1.0)
+│ │ │  ✘ Painted metal sheets : 4/4 (conf: 1.0)
+│ │ ✘ {1} A810 ⫺ 397.0
+│ │  ✔ {1} A668 ⫺ 2380.0
+│ │  │✔ {1} A1 ⫺ 1106.0
+│ │  ││✔ Trees : 4/4 (conf: 1.0)
+│ │  ││✘ Trees : 3/4 (conf: 0.75)
+│ │  │✘ {1} A902 ⫺ 2239.0
+│ │  │ ✔ {1} A181 ⫺ 1103.0
+│ │  │ │✔ Gravel : 2/4 (conf: 0.5)
+│ │  │ │✘ Shadows : 36/36 (conf: 1.0)
+│ │  │ ✘ {1} A1 ⫺ 1071.0
+│ │  │  ✔ Trees : 4/4 (conf: 1.0)
+│ │  │  ✘ Trees : 3/4 (conf: 0.75)
+│ │  ✘ {1} A37 ⫺ 852.0
+│ │   ✔ {1} A921 ⫺ 1934.0
+│ │   │✔ {1} A24 ⫺ 539.0
+│ │   ││✔ Meadows : 4/6 (conf: 0.6666666666666666)
+│ │   ││✘ Self-Blocking Bricks : 7/7 (conf: 1.0)
+│ │   │✘ {1} A31 ⫺ 499.0
+│ │   │ ✔ Gravel : 1/4 (conf: 0.25)
+│ │   │ ✘ Painted metal sheets : 10/10 (conf: 1.0)
+│ │   ✘ {1} A17 ⫺ 1372.0
+│ │    ✔ Trees : 3/4 (conf: 0.75)
+│ │    ✘ Shadows : 7/7 (conf: 1.0)
+│ ✘ {1} A271 ⫺ 993.0
+│  ✔ {1} A659 ⫺ 1915.0
+│  │✔ {1} A613 ⫺ 1204.0
+│  ││✔ {1} A856 ⫺ 1568.0
+│  │││✔ Meadows : 2/4 (conf: 0.5)
+│  │││✘ {1} A49 ⫺ 487.0
+│  │││ ✔ Trees : 3/4 (conf: 0.75)
+│  │││ ✘ Asphalt : 7/7 (conf: 1.0)
+│  ││✘ {1} A342 ⫺ 100.0
+│  ││ ✔ {1} A44 ⫺ 1525.0
+│  ││ │✔ Bitumen : 4/5 (conf: 0.8)
+│  ││ │✘ Bare Soil : 17/17 (conf: 1.0)
+│  ││ ✘ Painted metal sheets : 6/6 (conf: 1.0)
+│  │✘ {1} A524 ⫺ 914.0
+│  │ ✔ {1} A17 ⫺ 1282.0
+│  │ │✔ Painted metal sheets : 2/4 (conf: 0.5)
+│  │ │✘ Meadows : 8/8 (conf: 1.0)
+│  │ ✘ Trees : 16/16 (conf: 1.0)
+│  ✘ {1} A96 ⫺ 469.0
+│   ✔ {1} A143 ⫺ 1500.0
+│   │✔ {1} A13 ⫺ 607.0
+│   ││✔ Meadows : 6/6 (conf: 1.0)
+│   ││✘ Painted metal sheets : 2/4 (conf: 0.5)
+│   │✘ {1} A74 ⫺ 637.0
+│   │ ✔ Painted metal sheets : 3/5 (conf: 0.6)
+│   │ ✘ Asphalt : 8/8 (conf: 1.0)
+│   ✘ Gravel : 11/12 (conf: 0.9166666666666666)
+✘ {1} A846 ⫺ 262.0
+ ✔ {1} A605 ⫺ 940.0
+ │✔ {1} A894 ⫺ 1632.0
+ ││✔ {1} A894 ⫺ 1941.0
+ │││✔ {1} A213 ⫺ 1036.0
+ ││││✔ Meadows : 19/19 (conf: 1.0)
+ ││││✘ {1} A14 ⫺ 2888.0
+ ││││ ✔ Self-Blocking Bricks : 3/4 (conf: 0.75)
+ ││││ ✘ Asphalt : 7/7 (conf: 1.0)
+ │││✘ {1} A127 ⫺ 1085.0
+ │││ ✔ {1} A638 ⫺ 2066.0
+ │││ │✔ Meadows : 3/5 (conf: 0.6)
+ │││ │✘ {1} A209 ⫺ 799.0
+ │││ │ ✔ Bare Soil : 3/4 (conf: 0.75)
+ │││ │ ✘ {1} A1 ⫺ 1266.0
+ │││ │  ✔ Bitumen : 3/4 (conf: 0.75)
+ │││ │  ✘ Bitumen : 7/7 (conf: 1.0)
+ │││ ✘ {1} A520 ⫺ 1553.0
+ │││  ✔ {1} A1 ⫺ 935.0
+ │││  │✔ Meadows : 3/4 (conf: 0.75)
+ │││  │✘ Meadows : 5/5 (conf: 1.0)
+ │││  ✘ {1} A720 ⫺ 228.0
+ │││   ✔ Painted metal sheets : 13/14 (conf: 0.9285714285714286)
+ │││   ✘ Gravel : 3/6 (conf: 0.5)
+ ││✘ {1} A101 ⫺ 648.0
+ ││ ✔ Painted metal sheets : 3/6 (conf: 0.5)
+ ││ ✘ Asphalt : 21/22 (conf: 0.9545454545454546)
+ │✘ {1} A105 ⫺ 556.0
+ │ ✔ {1} A871 ⫺ 1517.0
+ │ │✔ {1} A359 ⫺ 1913.0
+ │ ││✔ Asphalt : 9/9 (conf: 1.0)
+ │ ││✘ {1} A4 ⫺ 677.0
+ │ ││ ✔ Gravel : 6/6 (conf: 1.0)
+ │ ││ ✘ Gravel : 2/4 (conf: 0.5)
+ │ │✘ {1} A711 ⫺ 248.0
+ │ │ ✔ {1} A126 ⫺ 166.0
+ │ │ │✔ Asphalt : 2/4 (conf: 0.5)
+ │ │ │✘ Bare Soil : 6/6 (conf: 1.0)
+ │ │ ✘ Self-Blocking Bricks : 9/9 (conf: 1.0)
+ │ ✘ {1} A809 ⫺ 2020.0
+ │  ✔ {1} A2 ⫺ 753.0
+ │  │✔ Bitumen : 3/4 (conf: 0.75)
+ │  │✘ Bitumen : 7/7 (conf: 1.0)
+ │  ✘ Gravel : 3/4 (conf: 0.75)
+ ✘ {1} A894 ⫺ 1960.0
+  ✔ {1} A673 ⫺ 1478.0
+  │✔ Trees : 11/12 (conf: 0.9166666666666666)
+  │✘ {1} A864 ⫺ 232.0
+  │ ✔ Self-Blocking Bricks : 13/14 (conf: 0.9285714285714286)
+  │ ✘ {1} A1 ⫺ 1159.0
+  │  ✔ Gravel : 2/4 (conf: 0.5)
+  │  ✘ Gravel : 6/6 (conf: 1.0)
+  ✘ {1} A211 ⫺ 303.0
+   ✔ {1} A315 ⫺ 110.0
+   │✔ {1} A12 ⫺ 1211.0
+   ││✔ {1} A11 ⫺ 680.0
+   │││✔ Gravel : 3/4 (conf: 0.75)
+   │││✘ Meadows : 4/4 (conf: 1.0)
+   ││✘ Bitumen : 4/5 (conf: 0.8)
+   │✘ Gravel : 18/18 (conf: 1.0)
+   ✘ Painted metal sheets : 12/13 (conf: 0.9230769230769231)
+● [ 26/06/2021 17:12:10 ] Saving tree to file ./results-gandalf/trees/tree_e61d8ade4ad49e3967b30281bf422431366c358e57d4336fd68b32a5a3bcd117.jld...
+Test tree:
+Decision Tree
+Leaves: 94
+Tot nodes: 187
+Height: 9
+Modal height:  0
+worldTypes: DataType[OneWorld]
+initConditions: [DecisionTree._startAtCenter()]
+{1} A927 ⫺ 356.0
+✔ {1} A118 ⫺ 1062.0
+│✔ {1} A672 ⫺ 2064.0
+││✔ {1} A395 ⫺ 1914.0
+│││✔ {1} A917 ⫺ 1981.0
+││││✔ {1} A690 ⫺ 2445.0
+│││││✔ Meadows : 2/4 (conf: 0.5)
+│││││✘ {1} A3 ⫺ 1160.0
+│││││ ✔ Painted metal sheets : 0/1 (conf: 0.0)
+│││││ ✘ Bitumen : 1/2 (conf: 0.5)
+││││✘ {1} A551 ⫺ 1040.0
+││││ ✔ {1} A5 ⫺ 2717.0
+││││ │✔ Bare Soil : 2/2 (conf: 1.0)
+││││ │✘ Self-Blocking Bricks : 0/3 (conf: 0.0)
+││││ ✘ {1} A693 ⫺ 299.0
+││││  ✔ {1} A2 ⫺ 695.0
+││││  │✔ Bitumen : 0/0 (conf: NaN)
+││││  │✘ Bitumen : 1/2 (conf: 0.5)
+││││  ✘ Bare Soil : 0/1 (conf: 0.0)
+│││✘ {1} A356 ⫺ 3059.0
+│││ ✔ {1} A668 ⫺ 1900.0
+│││ │✔ {1} A685 ⫺ 1556.0
+│││ ││✔ Bitumen : 0/1 (conf: 0.0)
+│││ ││✘ {1} A73 ⫺ 1078.0
+│││ ││ ✔ Gravel : 1/3 (conf: 0.3333333333333333)
+│││ ││ ✘ Bitumen : 0/1 (conf: 0.0)
+│││ │✘ {1} A74 ⫺ 573.0
+│││ │ ✔ Meadows : 0/0 (conf: NaN)
+│││ │ ✘ Bare Soil : 2/2 (conf: 1.0)
+│││ ✘ {1} A299 ⫺ 1100.0
+│││  ✔ Gravel : 0/2 (conf: 0.0)
+│││  ✘ {1} A269 ⫺ 1731.0
+│││   ✔ Self-Blocking Bricks : 0/1 (conf: 0.0)
+│││   ✘ Shadows : 3/6 (conf: 0.5)
+││✘ {1} A777 ⫺ 1867.0
+││ ✔ {1} A843 ⫺ 2592.0
+││ │✔ Painted metal sheets : 1/1 (conf: 1.0)
+││ │✘ {1} A281 ⫺ 784.0
+││ │ ✔ {1} A41 ⫺ 4134.0
+││ │ │✔ {1} A431 ⫺ 2018.0
+││ │ ││✔ Bitumen : 2/2 (conf: 1.0)
+││ │ ││✘ Self-Blocking Bricks : 1/3 (conf: 0.3333333333333333)
+││ │ │✘ {1} A650 ⫺ 1997.0
+││ │ │ ✔ Bitumen : 4/5 (conf: 0.8)
+││ │ │ ✘ {1} A25 ⫺ 1164.0
+││ │ │  ✔ Self-Blocking Bricks : 0/1 (conf: 0.0)
+││ │ │  ✘ Bare Soil : 0/0 (conf: NaN)
+││ │ ✘ Shadows : 2/7 (conf: 0.2857142857142857)
+││ ✘ {1} A160 ⫺ 1386.0
+││  ✔ {1} A74 ⫺ 406.0
+││  │✔ Self-Blocking Bricks : 2/4 (conf: 0.5)
+││  │✘ Bitumen : 0/0 (conf: NaN)
+││  ✘ {1} A206 ⫺ 1702.0
+││   ✔ Painted metal sheets : 0/2 (conf: 0.0)
+││   ✘ Trees : 1/2 (conf: 0.5)
+│✘ {1} A921 ⫺ 1808.0
+│ ✔ {1} A659 ⫺ 2267.0
+│ │✔ {1} A258 ⫺ 711.0
+│ ││✔ {1} A98 ⫺ 1404.0
+│ │││✔ {1} A4 ⫺ 458.0
+│ ││││✔ Asphalt : 0/3 (conf: 0.0)
+│ ││││✘ Asphalt : 0/0 (conf: NaN)
+│ │││✘ {1} A1 ⫺ 1105.0
+│ │││ ✔ Bare Soil : 0/0 (conf: NaN)
+│ │││ ✘ Self-Blocking Bricks : 0/2 (conf: 0.0)
+│ ││✘ Shadows : 1/2 (conf: 0.5)
+│ │✘ {1} A398 ⫺ 1127.0
+│ │ ✔ {1} A528 ⫺ 1715.0
+│ │ │✔ {1} A13 ⫺ 663.0
+│ │ ││✔ Trees : 0/0 (conf: NaN)
+│ │ ││✘ Trees : 2/2 (conf: 1.0)
+│ │ │✘ {1} A105 ⫺ 645.0
+│ │ │ ✔ Bare Soil : 0/0 (conf: NaN)
+│ │ │ ✘ {1} A12 ⫺ 1255.0
+│ │ │  ✔ Self-Blocking Bricks : 0/1 (conf: 0.0)
+│ │ │  ✘ Painted metal sheets : 0/0 (conf: NaN)
+│ │ ✘ {1} A810 ⫺ 397.0
+│ │  ✔ {1} A668 ⫺ 2380.0
+│ │  │✔ {1} A1 ⫺ 1106.0
+│ │  ││✔ Trees : 0/0 (conf: NaN)
+│ │  ││✘ Trees : 1/2 (conf: 0.5)
+│ │  │✘ {1} A902 ⫺ 2239.0
+│ │  │ ✔ {1} A181 ⫺ 1103.0
+│ │  │ │✔ Gravel : 0/1 (conf: 0.0)
+│ │  │ │✘ Shadows : 5/8 (conf: 0.625)
+│ │  │ ✘ {1} A1 ⫺ 1071.0
+│ │  │  ✔ Trees : 2/3 (conf: 0.6666666666666666)
+│ │  │  ✘ Trees : 1/1 (conf: 1.0)
+│ │  ✘ {1} A37 ⫺ 852.0
+│ │   ✔ {1} A921 ⫺ 1934.0
+│ │   │✔ {1} A24 ⫺ 539.0
+│ │   ││✔ Meadows : 1/1 (conf: 1.0)
+│ │   ││✘ Self-Blocking Bricks : 0/1 (conf: 0.0)
+│ │   │✘ {1} A31 ⫺ 499.0
+│ │   │ ✔ Gravel : 0/0 (conf: NaN)
+│ │   │ ✘ Painted metal sheets : 0/1 (conf: 0.0)
+│ │   ✘ {1} A17 ⫺ 1372.0
+│ │    ✔ Trees : 0/1 (conf: 0.0)
+│ │    ✘ Shadows : 1/1 (conf: 1.0)
+│ ✘ {1} A271 ⫺ 993.0
+│  ✔ {1} A659 ⫺ 1915.0
+│  │✔ {1} A613 ⫺ 1204.0
+│  ││✔ {1} A856 ⫺ 1568.0
+│  │││✔ Meadows : 0/0 (conf: NaN)
+│  │││✘ {1} A49 ⫺ 487.0
+│  │││ ✔ Trees : 0/0 (conf: NaN)
+│  │││ ✘ Asphalt : 3/3 (conf: 1.0)
+│  ││✘ {1} A342 ⫺ 100.0
+│  ││ ✔ {1} A44 ⫺ 1525.0
+│  ││ │✔ Bitumen : 0/0 (conf: NaN)
+│  ││ │✘ Bare Soil : 0/1 (conf: 0.0)
+│  ││ ✘ Painted metal sheets : 1/3 (conf: 0.3333333333333333)
+│  │✘ {1} A524 ⫺ 914.0
+│  │ ✔ {1} A17 ⫺ 1282.0
+│  │ │✔ Painted metal sheets : 0/1 (conf: 0.0)
+│  │ │✘ Meadows : 1/1 (conf: 1.0)
+│  │ ✘ Trees : 0/1 (conf: 0.0)
+│  ✘ {1} A96 ⫺ 469.0
+│   ✔ {1} A143 ⫺ 1500.0
+│   │✔ {1} A13 ⫺ 607.0
+│   ││✔ Meadows : 0/0 (conf: NaN)
+│   ││✘ Painted metal sheets : 0/1 (conf: 0.0)
+│   │✘ {1} A74 ⫺ 637.0
+│   │ ✔ Painted metal sheets : 0/0 (conf: NaN)
+│   │ ✘ Asphalt : 0/1 (conf: 0.0)
+│   ✘ Gravel : 1/1 (conf: 1.0)
+✘ {1} A846 ⫺ 262.0
+ ✔ {1} A605 ⫺ 940.0
+ │✔ {1} A894 ⫺ 1632.0
+ ││✔ {1} A894 ⫺ 1941.0
+ │││✔ {1} A213 ⫺ 1036.0
+ ││││✔ Meadows : 5/7 (conf: 0.7142857142857143)
+ ││││✘ {1} A14 ⫺ 2888.0
+ ││││ ✔ Self-Blocking Bricks : 2/5 (conf: 0.4)
+ ││││ ✘ Asphalt : 1/5 (conf: 0.2)
+ │││✘ {1} A127 ⫺ 1085.0
+ │││ ✔ {1} A638 ⫺ 2066.0
+ │││ │✔ Meadows : 1/1 (conf: 1.0)
+ │││ │✘ {1} A209 ⫺ 799.0
+ │││ │ ✔ Bare Soil : 0/1 (conf: 0.0)
+ │││ │ ✘ {1} A1 ⫺ 1266.0
+ │││ │  ✔ Bitumen : 0/2 (conf: 0.0)
+ │││ │  ✘ Bitumen : 1/3 (conf: 0.3333333333333333)
+ │││ ✘ {1} A520 ⫺ 1553.0
+ │││  ✔ {1} A1 ⫺ 935.0
+ │││  │✔ Meadows : 1/3 (conf: 0.3333333333333333)
+ │││  │✘ Meadows : 0/0 (conf: NaN)
+ │││  ✘ {1} A720 ⫺ 228.0
+ │││   ✔ Painted metal sheets : 2/6 (conf: 0.3333333333333333)
+ │││   ✘ Gravel : 0/0 (conf: NaN)
+ ││✘ {1} A101 ⫺ 648.0
+ ││ ✔ Painted metal sheets : 0/2 (conf: 0.0)
+ ││ ✘ Asphalt : 3/4 (conf: 0.75)
+ │✘ {1} A105 ⫺ 556.0
+ │ ✔ {1} A871 ⫺ 1517.0
+ │ │✔ {1} A359 ⫺ 1913.0
+ │ ││✔ Asphalt : 2/3 (conf: 0.6666666666666666)
+ │ ││✘ {1} A4 ⫺ 677.0
+ │ ││ ✔ Gravel : 0/0 (conf: NaN)
+ │ ││ ✘ Gravel : 1/2 (conf: 0.5)
+ │ │✘ {1} A711 ⫺ 248.0
+ │ │ ✔ {1} A126 ⫺ 166.0
+ │ │ │✔ Asphalt : 0/1 (conf: 0.0)
+ │ │ │✘ Bare Soil : 0/2 (conf: 0.0)
+ │ │ ✘ Self-Blocking Bricks : 0/2 (conf: 0.0)
+ │ ✘ {1} A809 ⫺ 2020.0
+ │  ✔ {1} A2 ⫺ 753.0
+ │  │✔ Bitumen : 0/0 (conf: NaN)
+ │  │✘ Bitumen : 0/0 (conf: NaN)
+ │  ✘ Gravel : 1/5 (conf: 0.2)
+ ✘ {1} A894 ⫺ 1960.0
+  ✔ {1} A673 ⫺ 1478.0
+  │✔ Trees : 2/3 (conf: 0.6666666666666666)
+  │✘ {1} A864 ⫺ 232.0
+  │ ✔ Self-Blocking Bricks : 4/6 (conf: 0.6666666666666666)
+  │ ✘ {1} A1 ⫺ 1159.0
+  │  ✔ Gravel : 1/1 (conf: 1.0)
+  │  ✘ Gravel : 1/2 (conf: 0.5)
+  ✘ {1} A211 ⫺ 303.0
+   ✔ {1} A315 ⫺ 110.0
+   │✔ {1} A12 ⫺ 1211.0
+   ││✔ {1} A11 ⫺ 680.0
+   │││✔ Gravel : 0/0 (conf: NaN)
+   │││✘ Meadows : 1/2 (conf: 0.5)
+   ││✘ Bitumen : 1/1 (conf: 1.0)
+   │✘ Gravel : 4/6 (conf: 0.6666666666666666)
+   ✘ Painted metal sheets : 4/4 (conf: 1.0)
+ test size = [(927, 180)]
+ Purity threshold 1.0
+RESULT:	Pavia,(3,:flattened,"o_None","TestOpGeq"),1	(loss_function = DecisionTree.util.entropy, min_samples_leaf = 4, min_purity_increase = 0.01, min_loss_at_leaf = 0.3)	(initConditions = DecisionTree._startAtCenter(), useRelationGlob = false)	1.0	|	46.11%	45.0%	20.0%	50.0%	50.0%	60.0%	40.0%	45.0%	60.0%	45.0%	45.0%	44.44%	52.63%	43.48%	63.16%	36.36%	31.03%	50.0%	60.0%	||	39.38%	[45.0, 27.59, 51.28, 46.51, 61.54, 38.1, 36.73, 54.55, 51.43]%	
+  accuracy: 46.11% kappa: 39.38% 
+  9  1  0  1  0  3  3  2  1	45.0%		Asphalt
+  1  4  3  0  0  4  4  3  1	20.0%		Bare Soil
+  2  2 10  0  1  2  2  1  0	50.0%		Bitumen
+  3  0  1 10  0  2  4  0  0	50.0%		Gravel
+  1  0  1  4 12  1  1  0  0	60.0%		Meadows
+  1  1  2  1  0  8  3  2  2	40.0%		Painted metal sheets
+  2  0  2  0  2  2  9  2  1	45.0%		Self-Blocking Bricks
+  0  0  0  5  1  0  1 12  1	60.0%		Shadows
+  1  1  0  2  3  0  2  2  9	45.0%		Trees
+
+overall_acc:	0.46111111111111114
+κ =		0.39375000000000004
+sensitivities:	[0.45, 0.2, 0.5, 0.5, 0.6, 0.4, 0.45, 0.6, 0.45]
+specificities:	[0.93125, 0.96875, 0.94375, 0.91875, 0.95625, 0.9125, 0.875, 0.925, 0.9625]
+PPVs:		[0.45, 0.4444444444444444, 0.5263157894736842, 0.43478260869565216, 0.631578947368421, 0.36363636363636365, 0.3103448275862069, 0.5, 0.6]
+NPVs:		[0.93125, 0.9064327485380117, 0.937888198757764, 0.9363057324840764, 0.9503105590062112, 0.9240506329113924, 0.9271523178807947, 0.9487179487179487, 0.9333333333333333]
+F1s:		[0.45, 0.27586206896551724, 0.5128205128205128, 0.46511627906976744, 0.6153846153846154, 0.38095238095238093, 0.3673469387755102, 0.5454545454545454, 0.5142857142857142]
+accuracies:	[0.8777777777777778, 0.8833333333333333, 0.8944444444444445, 0.8722222222222222, 0.9166666666666666, 0.8555555555555555, 0.8277777777777777, 0.8888888888888888, 0.9055555555555556]
+mean_accuracy:	0.8802469135802469
+Iteration "Pavia,(3,:averaged,"o_None","TestOpGeq"),1"...
+
+executing run 'Pavia,(3,:averaged,"o_None","TestOpGeq"),1'...
+dataset type = Tuple{Matrix{Float64}, Vector{String}}
+
+train_seed   = 1
+modal_args   = (initConditions = DecisionTree._startAtCenter(), useRelationGlob = false)
+tree_args    = Any[(loss_function = DecisionTree.util.entropy, min_samples_leaf = 4, min_purity_increase = 0.01, min_loss_at_leaf = 0.3)]
+forest_args  = Any[]
+forest_runs  = 5
+
+split_threshold   = 0.8
+data_modal_args   = (ontology = OneWorldOntology, test_operators = [⫺])
+dataset_slice   = [10, 122, 267, 386, 478, 583, 633, 707, 810, 3, 166, 252, 331, 497, 503, 670, 754, 819, 27, 190, 228, 353, 403, 521, 606, 735, 887, 63, 130, 246, 366, 462, 566, 687, 712, 872, 50, 195, 235, 350, 474, 501, 671, 769, 829, 57, 186, 201, 397, 447, 511, 660, 778, 843, 36, 116, 254, 326, 457, 542, 622, 766, 867, 21, 123, 248, 340, 469, 593, 666, 720, 868, 75, 157, 258, 336, 417, 509, 634, 704, 854, 78, 183, 238, 394, 408, 596, 624, 759, 862, 35, 154, 264, 376, 477, 599, 697, 748, 865, 66, 191, 274, 307, 448, 548, 602, 787, 823, 20, 167, 215, 392, 467, 549, 650, 795, 875, 67, 188, 239, 310, 434, 568, 682, 775, 890, 25, 141, 231, 330, 490, 594, 678, 732, 871, 24, 117, 270, 400, 492, 592, 668, 750, 816, 82, 194, 226, 387, 455, 560, 690, 793, 825, 74, 197, 289, 378, 441, 565, 683, 788, 896, 69, 105, 227, 341, 461, 539, 636, 705, 822, 81, 187, 300, 388, 427, 585, 646, 776, 811, 28, 159, 210, 342, 405, 531, 675, 710, 856, 15, 179, 244, 323, 420, 554, 618, 714, 830, 59, 163, 223, 332, 416, 558, 661, 740, 878, 29, 124, 268, 351, 459, 564, 601, 786, 820, 18, 153, 232, 329, 500, 582, 673, 767, 847, 31, 162, 220, 319, 418, 535, 685, 791, 821, 43, 177, 288, 346, 465, 576, 681, 770, 876, 40, 155, 249, 325, 470, 575, 625, 784, 860, 12, 149, 205, 327, 496, 578, 651, 718, 848, 83, 192, 275, 305, 464, 597, 665, 774, 836, 100, 145, 247, 398, 415, 508, 688, 746, 888, 94, 178, 261, 322, 488, 519, 607, 717, 824, 16, 110, 291, 347, 485, 551, 680, 722, 849, 51, 119, 204, 337, 466, 590, 612, 796, 894, 73, 148, 297, 362, 449, 522, 611, 749, 885, 19, 103, 292, 358, 425, 533, 623, 800, 801, 8, 142, 213, 382, 499, 530, 684, 785, 846, 11, 134, 207, 345, 472, 598, 628, 761, 827, 95, 136, 296, 357, 407, 515, 652, 701, 881, 58, 169, 284, 339, 458, 595, 632, 709, 899, 72, 101, 241, 321, 491, 581, 603, 777, 898, 13, 127, 230, 349, 432, 550, 620, 723, 863, 53, 172, 240, 301, 435, 555, 657, 757, 813, 22, 200, 285, 335, 483, 532, 663, 744, 859, 71, 176, 260, 379, 437, 517, 643, 782, 869, 87, 139, 202, 399, 439, 514, 672, 702, 855, 33, 160, 299, 389, 451, 544, 674, 727, 828, 61, 168, 208, 343, 480, 540, 617, 781, 808, 90, 180, 233, 309, 428, 586, 629, 772, 897, 55, 175, 216, 348, 476, 518, 613, 731, 886, 60, 137, 290, 383, 443, 573, 637, 711, 900, 96, 198, 211, 308, 456, 552, 610, 706, 852, 68, 144, 214, 317, 431, 563, 692, 733, 806, 77, 189, 203, 315, 471, 507, 669, 789, 832, 9, 135, 279, 361, 473, 536, 621, 743, 858, 42, 147, 221, 352, 481, 553, 698, 762, 834, 64, 115, 287, 391, 423, 528, 604, 763, 835, 85, 196, 256, 390, 453, 516, 614, 752, 818, 54, 182, 280, 359, 442, 588, 689, 783, 837, 2, 140, 245, 320, 429, 541, 609, 726, 805, 23, 170, 272, 313, 402, 559, 656, 764, 839, 91, 104, 269, 324, 413, 538, 642, 737, 833, 65, 181, 257, 344, 414, 505, 619, 758, 857, 48, 132, 224, 367, 487, 523, 638, 742, 826, 70, 173, 271, 303, 444, 589, 658, 779, 804, 80, 118, 276, 338, 460, 570, 644, 794, 895, 49, 171, 265, 333, 454, 577, 677, 773, 817, 7, 120, 281, 360, 438, 572, 694, 768, 807, 88, 193, 218, 372, 482, 584, 635, 753, 873, 45, 121, 229, 381, 475, 510, 676, 771, 866, 14, 174, 236, 364, 450, 534, 645, 741, 844, 97, 128, 283, 304, 436, 562, 695, 751, 841, 26, 111, 243, 311, 463, 561, 653, 729, 883, 52, 112, 294, 302, 412, 506, 654, 797, 851, 4, 158, 234, 384, 410, 569, 648, 721, 861, 32, 150, 253, 371, 409, 512, 616, 780, 870, 34, 146, 277, 374, 493, 579, 699, 765, 893, 99, 125, 266, 380, 430, 504, 631, 798, 802, 93, 102, 206, 363, 422, 587, 659, 792, 842, 56, 152, 286, 375, 445, 513, 630, 715, 882, 46, 113, 250, 306, 498, 524, 627, 730, 812, 47, 185, 263, 373, 404, 525, 679, 716, 850, 84, 108, 242, 385, 419, 600, 691, 760, 877, 79, 129, 217, 318, 486, 546, 655, 734, 840, 39, 156, 282, 365, 494, 591, 640, 799, 815, 17, 114, 251, 312, 468, 574, 615, 756, 838, 38, 143, 225, 369, 452, 556, 700, 790, 880, 5, 151, 212, 368, 426, 502, 649, 736, 809, 44, 138, 278, 355, 433, 526, 641, 724, 831, 98, 126, 237, 395, 489, 529, 693, 713, 889, 86, 109, 273, 334, 421, 537, 608, 755, 853, 92, 199, 262, 354, 479, 527, 647, 725, 803, 41, 184, 209, 328, 446, 547, 605, 719, 814, 89, 107, 259, 370, 411, 567, 664, 703, 891, 6, 131, 222, 377, 495, 545, 639, 708, 845, 1, 106, 295, 314, 401, 557, 667, 747, 864, 76, 161, 255, 396, 406, 520, 686, 738, 879, 37, 164, 298, 393, 484, 543, 696, 739, 884, 30, 133, 219, 356, 440, 580, 626, 745, 874, 62, 165, 293, 316, 424, 571, 662, 728, 892]
+
+Frame 1/1
+● [ 26/06/2021 17:12:19 ] Computing stump_fmd for 403a4da788c9dc802d624cd92c81630bea459a7edab5ff88dda7da8e66c3c87a...
+┌ LogLevel(-500): OntologicalDataset -> FeatModalDataset
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:12
+┌ LogLevel(-500): Instance 1/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 361/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 723/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 180/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 542/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): FeatModalDataset -> StumpFeatModalDataset
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:358
+┌ LogLevel(-500): Instance 1/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 361/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 723/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 180/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 542/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+  0.835221 seconds (1.75 M allocations: 78.013 MiB, 10.95% gc time, 97.16% compilation time)
+● [ 26/06/2021 17:12:20 ] Computed stump_fmd in 00:00:01...
+Saving stump_fmd to file "./results-gandalf/gammas/stump_fmd_403a4da788c9dc802d624cd92c81630bea459a7edab5ff88dda7da8e66c3c87a.jld"...
+X_train:
+  MultiFrameFeatModalDataset
+  └ [1] StumpFeatModalDataset{Float32, OneWorld}	0.51 MBs
+     ├ fmd	0.51 MBs	(shape (900, 103))
+     ├ fmd_m	0.0 MBs	(shape (900, 103, 0))
+     └ fmd_g	0.0 MBs		−
+
+train dataset:
+  MultiFrameFeatModalDataset
+  └ [1] StumpFeatModalDataset{Float32, OneWorld}	0.42 MBs
+     ├ fmd	0.42 MBs	(shape (720, 103))
+     ├ fmd_m	0.0 MBs	(shape (720, 103, 0))
+     └ fmd_g	0.0 MBs		−
+
+test  dataset:
+  MultiFrameOntologicalDataset
+  └ [1] OntologicalDataset{Float32, 0, OneWorld, 2}	0.07 MBs
+     ├ domain shape	(103, 180)
+     ├ 0 relations	AbstractRelation[]
+     └ max_channel_size	()
+
+● [ 26/06/2021 17:12:21 ] Computing tree 1 / 1...
+┌ LogLevel(-500):  Branch (257+463=720 samples) on frame 1 with decision: {1} A101 ⫺ 1652.4445, purity -1.6141370957874948
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (80+177=257 samples) on frame 1 with decision: {1} A34 ⫺ 876.6667, purity -0.6787295256856558
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (83+94=177 samples) on frame 1 with decision: {1} A17 ⫺ 1252.6666, purity -0.6309368879592554
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (63+20=83 samples) on frame 1 with decision: {1} A85 ⫺ 1492.0, purity -0.4311609965687494
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (39+24=63 samples) on frame 1 with decision: {1} A16 ⫺ 1095.6666, purity -0.24546189114674385
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+18=24 samples) on frame 1 with decision: {1} A6 ⫺ 1101.2222, purity -0.1591285420737032
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (5+15=20 samples) on frame 1 with decision: {1} A2 ⫺ 948.7778, purity -0.41960645630521115
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+4=15 samples) on frame 1 with decision: {1} A8 ⫺ 1091.5555, purity -0.18483924814931874
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (5+89=94 samples) on frame 1 with decision: {1} A93 ⫺ 1356.7778, purity -0.4678303728044383
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (49+40=89 samples) on frame 1 with decision: {1} A76 ⫺ 1476.8889, purity -0.3680691007046243
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (13+27=40 samples) on frame 1 with decision: {1} A17 ⫺ 1381.7778, purity -0.5145524614210896
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+6=13 samples) on frame 1 with decision: {1} A73 ⫺ 1564.7778, purity -0.575671075853933
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (17+10=27 samples) on frame 1 with decision: {1} A10 ⫺ 1391.5555, purity -0.22624603779810884
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+6=10 samples) on frame 1 with decision: {1} A8 ⫺ 1373.7778, purity -0.22493405784752318
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (226+237=463 samples) on frame 1 with decision: {1} A5 ⫺ 1085.5555, purity -1.176403785994338
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (96+130=226 samples) on frame 1 with decision: {1} A65 ⫺ 698.6667, purity -0.6822277055564039
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (54+42=96 samples) on frame 1 with decision: {1} A72 ⫺ 1556.2222, purity -0.3027556721139449
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (14+28=42 samples) on frame 1 with decision: {1} A6 ⫺ 396.8889, purity -0.3463865594203434
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (10+18=28 samples) on frame 1 with decision: {1} A85 ⫺ 3796.889, purity -0.24036130964616303
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+4=10 samples) on frame 1 with decision: {1} A3 ⫺ 525.1111, purity -0.4952707831673061
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (126+4=130 samples) on frame 1 with decision: {1} A77 ⫺ 2763.111, purity -0.6707202582216625
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (96+30=126 samples) on frame 1 with decision: {1} A103 ⫺ 2635.2222, purity -0.6231916156294595
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (53+43=96 samples) on frame 1 with decision: {1} A19 ⫺ 670.55554, purity -0.5969868750094455
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (26+27=53 samples) on frame 1 with decision: {1} A8 ⫺ 516.44446, purity -0.509109048078751
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (19+7=26 samples) on frame 1 with decision: {1} A5 ⫺ 534.1111, purity -0.45574777468438693
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+8=19 samples) on frame 1 with decision: {1} A85 ⫺ 1965.8889, purity -0.45492120926870905
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+7=11 samples) on frame 1 with decision: {1} A1 ⫺ 650.1111, purity -0.2044855071341121
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+4=8 samples) on frame 1 with decision: {1} A1 ⫺ 699.44446, purity -0.28116757230940415
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (11+16=27 samples) on frame 1 with decision: {1} A69 ⫺ 1345.0, purity -0.2807074675275276
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (5+6=11 samples) on frame 1 with decision: {1} A72 ⫺ 1541.6666, purity -0.24576065938162073
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (14+29=43 samples) on frame 1 with decision: {1} A3 ⫺ 635.3333, purity -0.39723431497621337
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+23=29 samples) on frame 1 with decision: {1} A78 ⫺ 2127.0, purity -0.49813565267232385
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (15+8=23 samples) on frame 1 with decision: {1} A1 ⫺ 915.0, purity -0.37820554657702227
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+9=15 samples) on frame 1 with decision: {1} A75 ⫺ 2104.0, purity -0.4121769459583939
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+5=9 samples) on frame 1 with decision: {1} A9 ⫺ 761.8889, purity -0.5279280773517969
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (21+9=30 samples) on frame 1 with decision: {1} A87 ⫺ 2729.3333, purity -0.1909542504884439
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+5=9 samples) on frame 1 with decision: {1} A1 ⫺ 759.7778, purity -0.24992673094169257
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (145+92=237 samples) on frame 1 with decision: {1} A34 ⫺ 2078.889, purity -0.6015977504619797
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (65+80=145 samples) on frame 1 with decision: {1} A14 ⫺ 1378.0, purity -0.6143298721992709
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (43+22=65 samples) on frame 1 with decision: {1} A3 ⫺ 1248.3334, purity -0.5180138062198518
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (33+10=43 samples) on frame 1 with decision: {1} A38 ⫺ 1804.5555, purity -0.5987078149658687
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (7+26=33 samples) on frame 1 with decision: {1} A83 ⫺ 1721.4445, purity -0.45893328306087794
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (5+21=26 samples) on frame 1 with decision: {1} A14 ⫺ 1261.7778, purity -0.42747903083644334
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (6+15=21 samples) on frame 1 with decision: {1} A81 ⫺ 1866.5555, purity -0.19804205158855576
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (4+6=10 samples) on frame 1 with decision: {1} A1 ⫺ 1197.7778, purity -0.22493405784752318
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (54+26=80 samples) on frame 1 with decision: {1} A2 ⫺ 1356.7778, purity -0.39477562876706934
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (14+12=26 samples) on frame 1 with decision: {1} A100 ⫺ 1936.1111, purity -0.39809548857843613
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (5+7=12 samples) on frame 1 with decision: {1} A11 ⫺ 1530.6666, purity -0.2804215279205235
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+┌ LogLevel(-500):  Branch (13+79=92 samples) on frame 1 with decision: {1} A14 ⫺ 2920.7778, purity -0.0
+└ @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:322
+ 11.295693 seconds (148.16 M allocations: 2.477 GiB, 4.26% gc time)
+Train tree:
+Decision Tree
+Leaves: 50
+Tot nodes: 99
+Height: 11
+Modal height:  0
+worldTypes: DataType[OneWorld]
+initConditions: [DecisionTree._startAtCenter()]
+{1} A101 ⫺ 1652.4445
+✔ {1} A5 ⫺ 1085.5555
+│✔ {1} A34 ⫺ 2078.889
+││✔ {1} A14 ⫺ 2920.7778
+│││✔ Painted metal sheets : 79/79 (conf: 1.0)
+│││✘ Bare Soil : 13/13 (conf: 1.0)
+││✘ {1} A14 ⫺ 1378.0
+││ ✔ {1} A2 ⫺ 1356.7778
+││ │✔ {1} A100 ⫺ 1936.1111
+││ ││✔ {1} A11 ⫺ 1530.6666
+││ │││✔ Self-Blocking Bricks : 7/7 (conf: 1.0)
+││ │││✘ Gravel : 3/5 (conf: 0.6)
+││ ││✘ Gravel : 13/14 (conf: 0.9285714285714286)
+││ │✘ Self-Blocking Bricks : 50/54 (conf: 0.9259259259259259)
+││ ✘ {1} A3 ⫺ 1248.3334
+││  ✔ Gravel : 22/22 (conf: 1.0)
+││  ✘ {1} A38 ⫺ 1804.5555
+││   ✔ {1} A1 ⫺ 1197.7778
+││   │✔ Gravel : 6/6 (conf: 1.0)
+││   │✘ Gravel : 3/4 (conf: 0.75)
+││   ✘ {1} A83 ⫺ 1721.4445
+││    ✔ {1} A14 ⫺ 1261.7778
+││    │✔ {1} A81 ⫺ 1866.5555
+││    ││✔ Self-Blocking Bricks : 15/15 (conf: 1.0)
+││    ││✘ Self-Blocking Bricks : 3/6 (conf: 0.5)
+││    │✘ Gravel : 4/5 (conf: 0.8)
+││    ✘ Gravel : 7/7 (conf: 1.0)
+│✘ {1} A65 ⫺ 698.6667
+│ ✔ {1} A77 ⫺ 2763.111
+│ │✔ Trees : 4/4 (conf: 1.0)
+│ │✘ {1} A103 ⫺ 2635.2222
+│ │ ✔ {1} A87 ⫺ 2729.3333
+│ │ │✔ {1} A1 ⫺ 759.7778
+│ │ ││✔ Bare Soil : 5/5 (conf: 1.0)
+│ │ ││✘ Meadows : 3/4 (conf: 0.75)
+│ │ │✘ Meadows : 21/21 (conf: 1.0)
+│ │ ✘ {1} A19 ⫺ 670.55554
+│ │  ✔ {1} A3 ⫺ 635.3333
+│ │  │✔ {1} A78 ⫺ 2127.0
+│ │  ││✔ {1} A1 ⫺ 915.0
+│ │  │││✔ Bare Soil : 8/8 (conf: 1.0)
+│ │  │││✘ {1} A75 ⫺ 2104.0
+│ │  │││ ✔ {1} A9 ⫺ 761.8889
+│ │  │││ │✔ Bare Soil : 4/5 (conf: 0.8)
+│ │  │││ │✘ Meadows : 3/4 (conf: 0.75)
+│ │  │││ ✘ Bare Soil : 6/6 (conf: 1.0)
+│ │  ││✘ Meadows : 4/6 (conf: 0.6666666666666666)
+│ │  │✘ Bare Soil : 14/14 (conf: 1.0)
+│ │  ✘ {1} A8 ⫺ 516.44446
+│ │   ✔ {1} A69 ⫺ 1345.0
+│ │   │✔ Meadows : 16/16 (conf: 1.0)
+│ │   │✘ {1} A72 ⫺ 1541.6666
+│ │   │ ✔ Bare Soil : 5/6 (conf: 0.8333333333333334)
+│ │   │ ✘ Meadows : 5/5 (conf: 1.0)
+│ │   ✘ {1} A5 ⫺ 534.1111
+│ │    ✔ Bare Soil : 7/7 (conf: 1.0)
+│ │    ✘ {1} A85 ⫺ 1965.8889
+│ │     ✔ {1} A1 ⫺ 699.44446
+│ │     │✔ Meadows : 4/4 (conf: 1.0)
+│ │     │✘ Bare Soil : 3/4 (conf: 0.75)
+│ │     ✘ {1} A1 ⫺ 650.1111
+│ │      ✔ Bare Soil : 7/7 (conf: 1.0)
+│ │      ✘ Bare Soil : 3/4 (conf: 0.75)
+│ ✘ {1} A72 ⫺ 1556.2222
+│  ✔ {1} A6 ⫺ 396.8889
+│  │✔ {1} A85 ⫺ 3796.889
+│  ││✔ Trees : 18/18 (conf: 1.0)
+│  ││✘ {1} A3 ⫺ 525.1111
+│  ││ ✔ Trees : 3/4 (conf: 0.75)
+│  ││ ✘ Meadows : 5/6 (conf: 0.8333333333333334)
+│  │✘ Meadows : 14/14 (conf: 1.0)
+│  ✘ Trees : 54/54 (conf: 1.0)
+✘ {1} A34 ⫺ 876.6667
+ ✔ {1} A17 ⫺ 1252.6666
+ │✔ {1} A93 ⫺ 1356.7778
+ ││✔ {1} A76 ⫺ 1476.8889
+ │││✔ {1} A17 ⫺ 1381.7778
+ ││││✔ {1} A10 ⫺ 1391.5555
+ │││││✔ {1} A8 ⫺ 1373.7778
+ ││││││✔ Bitumen : 6/6 (conf: 1.0)
+ ││││││✘ Asphalt : 3/4 (conf: 0.75)
+ │││││✘ Bitumen : 17/17 (conf: 1.0)
+ ││││✘ {1} A73 ⫺ 1564.7778
+ ││││ ✔ Asphalt : 5/6 (conf: 0.8333333333333334)
+ ││││ ✘ Bitumen : 4/7 (conf: 0.5714285714285714)
+ │││✘ Bitumen : 48/49 (conf: 0.9795918367346939)
+ ││✘ Asphalt : 5/5 (conf: 1.0)
+ │✘ {1} A85 ⫺ 1492.0
+ │ ✔ {1} A2 ⫺ 948.7778
+ │ │✔ {1} A8 ⫺ 1091.5555
+ │ ││✔ Gravel : 2/4 (conf: 0.5)
+ │ ││✘ Gravel : 11/11 (conf: 1.0)
+ │ │✘ Asphalt : 4/5 (conf: 0.8)
+ │ ✘ {1} A16 ⫺ 1095.6666
+ │  ✔ {1} A6 ⫺ 1101.2222
+ │  │✔ Asphalt : 18/18 (conf: 1.0)
+ │  │✘ Bitumen : 4/6 (conf: 0.6666666666666666)
+ │  ✘ Asphalt : 38/39 (conf: 0.9743589743589743)
+ ✘ Shadows : 80/80 (conf: 1.0)
+● [ 26/06/2021 17:12:33 ] Saving tree to file ./results-gandalf/trees/tree_f57e45b6527b921df7f80ec17e541e9b016be2dcc222c2d7570f1c74c0a11410.jld...
+Test tree:
+Decision Tree
+Leaves: 50
+Tot nodes: 99
+Height: 11
+Modal height:  0
+worldTypes: DataType[OneWorld]
+initConditions: [DecisionTree._startAtCenter()]
+{1} A101 ⫺ 1652.4445
+✔ {1} A5 ⫺ 1085.5555
+│✔ {1} A34 ⫺ 2078.889
+││✔ {1} A14 ⫺ 2920.7778
+│││✔ Painted metal sheets : 20/21 (conf: 0.9523809523809523)
+│││✘ Bare Soil : 2/3 (conf: 0.6666666666666666)
+││✘ {1} A14 ⫺ 1378.0
+││ ✔ {1} A2 ⫺ 1356.7778
+││ │✔ {1} A100 ⫺ 1936.1111
+││ ││✔ {1} A11 ⫺ 1530.6666
+││ │││✔ Self-Blocking Bricks : 1/2 (conf: 0.5)
+││ │││✘ Gravel : 2/2 (conf: 1.0)
+││ ││✘ Gravel : 3/4 (conf: 0.75)
+││ │✘ Self-Blocking Bricks : 9/11 (conf: 0.8181818181818182)
+││ ✘ {1} A3 ⫺ 1248.3334
+││  ✔ Gravel : 1/1 (conf: 1.0)
+││  ✘ {1} A38 ⫺ 1804.5555
+││   ✔ {1} A1 ⫺ 1197.7778
+││   │✔ Gravel : 3/3 (conf: 1.0)
+││   │✘ Gravel : 1/3 (conf: 0.3333333333333333)
+││   ✘ {1} A83 ⫺ 1721.4445
+││    ✔ {1} A14 ⫺ 1261.7778
+││    │✔ {1} A81 ⫺ 1866.5555
+││    ││✔ Self-Blocking Bricks : 3/3 (conf: 1.0)
+││    ││✘ Self-Blocking Bricks : 2/3 (conf: 0.6666666666666666)
+││    │✘ Gravel : 2/4 (conf: 0.5)
+││    ✘ Gravel : 1/1 (conf: 1.0)
+│✘ {1} A65 ⫺ 698.6667
+│ ✔ {1} A77 ⫺ 2763.111
+│ │✔ Trees : 0/0 (conf: NaN)
+│ │✘ {1} A103 ⫺ 2635.2222
+│ │ ✔ {1} A87 ⫺ 2729.3333
+│ │ │✔ {1} A1 ⫺ 759.7778
+│ │ ││✔ Bare Soil : 0/0 (conf: NaN)
+│ │ ││✘ Meadows : 0/1 (conf: 0.0)
+│ │ │✘ Meadows : 3/3 (conf: 1.0)
+│ │ ✘ {1} A19 ⫺ 670.55554
+│ │  ✔ {1} A3 ⫺ 635.3333
+│ │  │✔ {1} A78 ⫺ 2127.0
+│ │  ││✔ {1} A1 ⫺ 915.0
+│ │  │││✔ Bare Soil : 0/1 (conf: 0.0)
+│ │  │││✘ {1} A75 ⫺ 2104.0
+│ │  │││ ✔ {1} A9 ⫺ 761.8889
+│ │  │││ │✔ Bare Soil : 3/3 (conf: 1.0)
+│ │  │││ │✘ Meadows : 0/0 (conf: NaN)
+│ │  │││ ✘ Bare Soil : 0/0 (conf: NaN)
+│ │  ││✘ Meadows : 0/4 (conf: 0.0)
+│ │  │✘ Bare Soil : 1/3 (conf: 0.3333333333333333)
+│ │  ✘ {1} A8 ⫺ 516.44446
+│ │   ✔ {1} A69 ⫺ 1345.0
+│ │   │✔ Meadows : 2/3 (conf: 0.6666666666666666)
+│ │   │✘ {1} A72 ⫺ 1541.6666
+│ │   │ ✔ Bare Soil : 3/3 (conf: 1.0)
+│ │   │ ✘ Meadows : 1/1 (conf: 1.0)
+│ │   ✘ {1} A5 ⫺ 534.1111
+│ │    ✔ Bare Soil : 0/0 (conf: NaN)
+│ │    ✘ {1} A85 ⫺ 1965.8889
+│ │     ✔ {1} A1 ⫺ 699.44446
+│ │     │✔ Meadows : 0/0 (conf: NaN)
+│ │     │✘ Bare Soil : 2/4 (conf: 0.5)
+│ │     ✘ {1} A1 ⫺ 650.1111
+│ │      ✔ Bare Soil : 2/2 (conf: 1.0)
+│ │      ✘ Bare Soil : 1/1 (conf: 1.0)
+│ ✘ {1} A72 ⫺ 1556.2222
+│  ✔ {1} A6 ⫺ 396.8889
+│  │✔ {1} A85 ⫺ 3796.889
+│  ││✔ Trees : 3/4 (conf: 0.75)
+│  ││✘ {1} A3 ⫺ 525.1111
+│  ││ ✔ Trees : 1/1 (conf: 1.0)
+│  ││ ✘ Meadows : 1/1 (conf: 1.0)
+│  │✘ Meadows : 4/4 (conf: 1.0)
+│  ✘ Trees : 16/19 (conf: 0.8421052631578947)
+✘ {1} A34 ⫺ 876.6667
+ ✔ {1} A17 ⫺ 1252.6666
+ │✔ {1} A93 ⫺ 1356.7778
+ ││✔ {1} A76 ⫺ 1476.8889
+ │││✔ {1} A17 ⫺ 1381.7778
+ ││││✔ {1} A10 ⫺ 1391.5555
+ │││││✔ {1} A8 ⫺ 1373.7778
+ ││││││✔ Bitumen : 2/3 (conf: 0.6666666666666666)
+ ││││││✘ Asphalt : 0/0 (conf: NaN)
+ │││││✘ Bitumen : 4/4 (conf: 1.0)
+ ││││✘ {1} A73 ⫺ 1564.7778
+ ││││ ✔ Asphalt : 1/1 (conf: 1.0)
+ ││││ ✘ Bitumen : 1/1 (conf: 1.0)
+ │││✘ Bitumen : 6/7 (conf: 0.8571428571428571)
+ ││✘ Asphalt : 1/1 (conf: 1.0)
+ │✘ {1} A85 ⫺ 1492.0
+ │ ✔ {1} A2 ⫺ 948.7778
+ │ │✔ {1} A8 ⫺ 1091.5555
+ │ ││✔ Gravel : 1/1 (conf: 1.0)
+ │ ││✘ Gravel : 1/1 (conf: 1.0)
+ │ │✘ Asphalt : 0/3 (conf: 0.0)
+ │ ✘ {1} A16 ⫺ 1095.6666
+ │  ✔ {1} A6 ⫺ 1101.2222
+ │  │✔ Asphalt : 1/1 (conf: 1.0)
+ │  │✘ Bitumen : 4/6 (conf: 0.6666666666666666)
+ │  ✘ Asphalt : 11/12 (conf: 0.9166666666666666)
+ ✘ Shadows : 20/20 (conf: 1.0)
+ test size = [(103, 180)]
+ Purity threshold 1.0
+RESULT:	Pavia,(3,:averaged,"o_None","TestOpGeq"),1	(loss_function = DecisionTree.util.entropy, min_samples_leaf = 4, min_purity_increase = 0.01, min_loss_at_leaf = 0.3)	(initConditions = DecisionTree._startAtCenter(), useRelationGlob = false)	1.0	|	81.11%	70.0%	70.0%	85.0%	75.0%	55.0%	100.0%	75.0%	100.0%	100.0%	77.78%	70.0%	80.95%	75.0%	64.71%	95.24%	78.95%	100.0%	83.33%	||	78.75%	[73.68, 70.0, 82.93, 75.0, 59.46, 97.56, 76.92, 100.0, 90.91]%	
+  accuracy: 81.11% kappa: 78.75% 
+ 14  0  4  0  1  0  1  0  0	70.0%		Asphalt
+  0 14  0  2  3  1  0  0  0	70.0%		Bare Soil
+  3  0 17  0  0  0  0  0  0	85.0%		Bitumen
+  1  1  0 15  0  0  3  0  0	75.0%		Gravel
+  0  5  0  0 11  0  0  0  4	55.0%		Meadows
+  0  0  0  0  0 20  0  0  0	100.0%		Painted metal sheets
+  0  0  0  3  2  0 15  0  0	75.0%		Self-Blocking Bricks
+  0  0  0  0  0  0  0 20  0	100.0%		Shadows
+  0  0  0  0  0  0  0  0 20	100.0%		Trees
+
+overall_acc:	0.8111111111111111
+κ =		0.7875
+sensitivities:	[0.7, 0.7, 0.85, 0.75, 0.55, 1.0, 0.75, 1.0, 1.0]
+specificities:	[0.975, 0.9625, 0.975, 0.96875, 0.9625, 0.99375, 0.975, 1.0, 0.975]
+PPVs:		[0.7777777777777778, 0.7, 0.8095238095238095, 0.75, 0.6470588235294118, 0.9523809523809523, 0.7894736842105263, 1.0, 0.8333333333333334]
+NPVs:		[0.9629629629629629, 0.9625, 0.9811320754716981, 0.96875, 0.9447852760736196, 1.0, 0.968944099378882, 1.0, 1.0]
+F1s:		[0.7368421052631579, 0.7, 0.8292682926829268, 0.75, 0.5945945945945946, 0.975609756097561, 0.7692307692307693, 1.0, 0.9090909090909091]
+accuracies:	[0.9444444444444444, 0.9333333333333333, 0.9611111111111111, 0.9444444444444444, 0.9166666666666666, 0.9944444444444445, 0.95, 1.0, 0.9777777777777777]
+mean_accuracy:	0.9580246913580246
+Iteration "Pavia,(3,false,"o_RCC8","TestOpAll"),1"...
+
+executing run 'Pavia,(3,false,"o_RCC8","TestOpAll"),1'...
+dataset type = Tuple{Array{Int64, 4}, Vector{String}}
+
+train_seed   = 1
+modal_args   = (initConditions = DecisionTree._startAtCenter(), useRelationGlob = false)
+tree_args    = Any[(loss_function = DecisionTree.util.entropy, min_samples_leaf = 4, min_purity_increase = 0.01, min_loss_at_leaf = 0.3)]
+forest_args  = Any[]
+forest_runs  = 5
+
+split_threshold   = 0.8
+data_modal_args   = (ontology = Ontology{DecisionTree.ModalLogic.Interval2D}(RCC8), test_operators = TestOperator[⫺, ⫹, ⫺₉₀, ⫹₉₀, ⫺₈₀, ⫹₈₀, ⫺₇₀, ⫹₇₀, ⫺₆₀, ⫹₆₀])
+dataset_slice   = [10, 122, 267, 386, 478, 583, 633, 707, 810, 3, 166, 252, 331, 497, 503, 670, 754, 819, 27, 190, 228, 353, 403, 521, 606, 735, 887, 63, 130, 246, 366, 462, 566, 687, 712, 872, 50, 195, 235, 350, 474, 501, 671, 769, 829, 57, 186, 201, 397, 447, 511, 660, 778, 843, 36, 116, 254, 326, 457, 542, 622, 766, 867, 21, 123, 248, 340, 469, 593, 666, 720, 868, 75, 157, 258, 336, 417, 509, 634, 704, 854, 78, 183, 238, 394, 408, 596, 624, 759, 862, 35, 154, 264, 376, 477, 599, 697, 748, 865, 66, 191, 274, 307, 448, 548, 602, 787, 823, 20, 167, 215, 392, 467, 549, 650, 795, 875, 67, 188, 239, 310, 434, 568, 682, 775, 890, 25, 141, 231, 330, 490, 594, 678, 732, 871, 24, 117, 270, 400, 492, 592, 668, 750, 816, 82, 194, 226, 387, 455, 560, 690, 793, 825, 74, 197, 289, 378, 441, 565, 683, 788, 896, 69, 105, 227, 341, 461, 539, 636, 705, 822, 81, 187, 300, 388, 427, 585, 646, 776, 811, 28, 159, 210, 342, 405, 531, 675, 710, 856, 15, 179, 244, 323, 420, 554, 618, 714, 830, 59, 163, 223, 332, 416, 558, 661, 740, 878, 29, 124, 268, 351, 459, 564, 601, 786, 820, 18, 153, 232, 329, 500, 582, 673, 767, 847, 31, 162, 220, 319, 418, 535, 685, 791, 821, 43, 177, 288, 346, 465, 576, 681, 770, 876, 40, 155, 249, 325, 470, 575, 625, 784, 860, 12, 149, 205, 327, 496, 578, 651, 718, 848, 83, 192, 275, 305, 464, 597, 665, 774, 836, 100, 145, 247, 398, 415, 508, 688, 746, 888, 94, 178, 261, 322, 488, 519, 607, 717, 824, 16, 110, 291, 347, 485, 551, 680, 722, 849, 51, 119, 204, 337, 466, 590, 612, 796, 894, 73, 148, 297, 362, 449, 522, 611, 749, 885, 19, 103, 292, 358, 425, 533, 623, 800, 801, 8, 142, 213, 382, 499, 530, 684, 785, 846, 11, 134, 207, 345, 472, 598, 628, 761, 827, 95, 136, 296, 357, 407, 515, 652, 701, 881, 58, 169, 284, 339, 458, 595, 632, 709, 899, 72, 101, 241, 321, 491, 581, 603, 777, 898, 13, 127, 230, 349, 432, 550, 620, 723, 863, 53, 172, 240, 301, 435, 555, 657, 757, 813, 22, 200, 285, 335, 483, 532, 663, 744, 859, 71, 176, 260, 379, 437, 517, 643, 782, 869, 87, 139, 202, 399, 439, 514, 672, 702, 855, 33, 160, 299, 389, 451, 544, 674, 727, 828, 61, 168, 208, 343, 480, 540, 617, 781, 808, 90, 180, 233, 309, 428, 586, 629, 772, 897, 55, 175, 216, 348, 476, 518, 613, 731, 886, 60, 137, 290, 383, 443, 573, 637, 711, 900, 96, 198, 211, 308, 456, 552, 610, 706, 852, 68, 144, 214, 317, 431, 563, 692, 733, 806, 77, 189, 203, 315, 471, 507, 669, 789, 832, 9, 135, 279, 361, 473, 536, 621, 743, 858, 42, 147, 221, 352, 481, 553, 698, 762, 834, 64, 115, 287, 391, 423, 528, 604, 763, 835, 85, 196, 256, 390, 453, 516, 614, 752, 818, 54, 182, 280, 359, 442, 588, 689, 783, 837, 2, 140, 245, 320, 429, 541, 609, 726, 805, 23, 170, 272, 313, 402, 559, 656, 764, 839, 91, 104, 269, 324, 413, 538, 642, 737, 833, 65, 181, 257, 344, 414, 505, 619, 758, 857, 48, 132, 224, 367, 487, 523, 638, 742, 826, 70, 173, 271, 303, 444, 589, 658, 779, 804, 80, 118, 276, 338, 460, 570, 644, 794, 895, 49, 171, 265, 333, 454, 577, 677, 773, 817, 7, 120, 281, 360, 438, 572, 694, 768, 807, 88, 193, 218, 372, 482, 584, 635, 753, 873, 45, 121, 229, 381, 475, 510, 676, 771, 866, 14, 174, 236, 364, 450, 534, 645, 741, 844, 97, 128, 283, 304, 436, 562, 695, 751, 841, 26, 111, 243, 311, 463, 561, 653, 729, 883, 52, 112, 294, 302, 412, 506, 654, 797, 851, 4, 158, 234, 384, 410, 569, 648, 721, 861, 32, 150, 253, 371, 409, 512, 616, 780, 870, 34, 146, 277, 374, 493, 579, 699, 765, 893, 99, 125, 266, 380, 430, 504, 631, 798, 802, 93, 102, 206, 363, 422, 587, 659, 792, 842, 56, 152, 286, 375, 445, 513, 630, 715, 882, 46, 113, 250, 306, 498, 524, 627, 730, 812, 47, 185, 263, 373, 404, 525, 679, 716, 850, 84, 108, 242, 385, 419, 600, 691, 760, 877, 79, 129, 217, 318, 486, 546, 655, 734, 840, 39, 156, 282, 365, 494, 591, 640, 799, 815, 17, 114, 251, 312, 468, 574, 615, 756, 838, 38, 143, 225, 369, 452, 556, 700, 790, 880, 5, 151, 212, 368, 426, 502, 649, 736, 809, 44, 138, 278, 355, 433, 526, 641, 724, 831, 98, 126, 237, 395, 489, 529, 693, 713, 889, 86, 109, 273, 334, 421, 537, 608, 755, 853, 92, 199, 262, 354, 479, 527, 647, 725, 803, 41, 184, 209, 328, 446, 547, 605, 719, 814, 89, 107, 259, 370, 411, 567, 664, 703, 891, 6, 131, 222, 377, 495, 545, 639, 708, 845, 1, 106, 295, 314, 401, 557, 667, 747, 864, 76, 161, 255, 396, 406, 520, 686, 738, 879, 37, 164, 298, 393, 484, 543, 696, 739, 884, 30, 133, 219, 356, 440, 580, 626, 745, 874, 62, 165, 293, 316, 424, 571, 662, 728, 892]
+
+Frame 1/1
+● [ 26/06/2021 17:12:48 ] Computing stump_fmd for b8a70cdeef933e871582734ac64b65caf745228a274a53b6f994239f3599ffb7...
+┌ LogLevel(-500): OntologicalDataset -> FeatModalDataset
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:12
+┌ LogLevel(-500): Instance 1/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 361/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 723/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 180/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 542/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): FeatModalDataset -> StumpFeatModalDataset
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:358
+┌ LogLevel(-500): Instance 1/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 361/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 723/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 180/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 542/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+34716.260716 seconds (110.86 G allocations: 9.840 TiB, 89.85% gc time, 0.00% compilation time)
+● [ 27/06/2021 02:51:24 ] Computed stump_fmd in 10:39:36...
+Saving stump_fmd to file "./results-gandalf/gammas/stump_fmd_b8a70cdeef933e871582734ac64b65caf745228a274a53b6f994239f3599ffb7.jld"...
+X_train:
+  MultiFrameFeatModalDataset
+  └ [1] StumpFeatModalDataset{Float32, DecisionTree.ModalLogic.Interval2D}	16352.17 MBs
+     ├ fmd	509.89 MBs	(shape (3, 4, 3, 4, 900, 1030))
+     ├ fmd_m	15842.29 MBs	(shape (900, 1030, 7))
+     └ fmd_g	0.0 MBs		−
+
+train dataset:
+  MultiFrameFeatModalDataset
+  └ [1] StumpFeatModalDataset{Float32, DecisionTree.ModalLogic.Interval2D}	13081.84 MBs
+     ├ fmd	408.01 MBs	(shape (3, 4, 3, 4, 720, 1030))
+     ├ fmd_m	12673.83 MBs	(shape (720, 1030, 7))
+     └ fmd_g	0.0 MBs		−
+
+test  dataset:
+  MultiFrameOntologicalDataset
+  └ [1] OntologicalDataset{Float32, 2, DecisionTree.ModalLogic.Interval2D, 4}	0.64 MBs
+     ├ domain shape	(3, 3, 103, 180)
+     ├ 7 relations	DecisionTree.ModalLogic._TopoRelRCC8[⟨DC⟩, ⟨EC⟩, ⟨PO⟩, ⟨TPP⟩, ⟨T̅P̅P̅⟩, ⟨NTPP⟩, ⟨N̅T̅P̅P̅⟩]
+     └ max_channel_size	(3, 3)
+
+● [ 27/06/2021 04:29:25 ] Computing tree 1 / 1...
+ERROR: LoadError: MethodError: no method matching alpha(::AttributeSoftMaximumFeatureType{Float64})
+Closest candidates are:
+  alpha(!Matched::_TestOpGeqSoft) at /home/aclai/DecisionTree.jl/src/ModalLogic/testOperators.jl:147
+  alpha(!Matched::_TestOpLeqSoft) at /home/aclai/DecisionTree.jl/src/ModalLogic/testOperators.jl:148
+Stacktrace:
+  [1] display_propositional_decision(feature::AttributeSoftMaximumFeatureType{Float64}, test_operator::typeof(<=), threshold::Float32)
+    @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/ModalLogic.jl:1041
+  [2] display_decision(relation::DecisionTree.ModalLogic._Topo_TPPi, feature::AttributeSoftMaximumFeatureType{Float64}, test_operator::Function, threshold::Float32)
+    @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/ModalLogic.jl:1017
+  [3] display_decision(i_frame::Int64, relation::DecisionTree.ModalLogic._Topo_TPPi, feature::AttributeSoftMaximumFeatureType{Float64}, test_operator::Function, threshold::Float32)
+    @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/ModalLogic.jl:1026
+  [4] _split!(Xs::MultiFrameFeatModalDataset, Y::Vector{Int64}, W::Vector{Int64}, Ss::Vector{Vector{WST} where {WorldType, WST<:Vector{WorldType}}}, loss_function::typeof(DecisionTree.util.entropy), node::DecisionTree.treeclassifier.NodeMeta{Float64}, max_depth::Int64, min_samples_leaf::Int64, min_loss_at_leaf::Float64, min_purity_increase::Float64, n_subrelations::Vector{typeof(identity)}, n_subfeatures::Vector{Int64}, useRelationGlob::Vector{Bool}, indX::Vector{Int64}, nc::Vector{Int64}, ncl::Vector{Int64}, ncr::Vector{Int64}, consistency_sat_check::Vector{Bool}, Yf::Vector{Int64}, Wf::Vector{Int64}, Sfs::Vector{Vector{WST} where {WorldType, WST<:Vector{WorldType}}}, rng::Random.MersenneTwister)
+    @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:298
+  [5] _fit(Xs::MultiFrameFeatModalDataset, Y::Vector{Int64}, W::Vector{Int64}, loss_function::Function, n_classes::Int64, max_depth::Int64, min_samples_leaf::Int64, min_purity_increase::Float64, min_loss_at_leaf::Float64, n_subrelations::Vector{typeof(identity)}, n_subfeatures::Vector{Int64}, initConditions::Vector{DecisionTree._startAtCenter}, useRelationGlob::Vector{Bool}, rng::Random.MersenneTwister)
+    @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:646
+  [6] fit(; Xs::MultiFrameFeatModalDataset, Y::Vector{String}, W::Nothing, loss_function::Function, max_depth::Int64, min_samples_leaf::Int64, min_purity_increase::Float64, min_loss_at_leaf::Float64, n_subrelations::Vector{typeof(identity)}, n_subfeatures::Vector{Int64}, initConditions::Vector{DecisionTree._startAtCenter}, useRelationGlob::Vector{Bool}, rng::Random.MersenneTwister)
+    @ DecisionTree.treeclassifier ~/DecisionTree.jl/src/modal-classification/tree.jl:753
+  [7] build_tree(Xs::MultiFrameFeatModalDataset, Y::Vector{String}, W::Nothing; loss_function::Function, max_depth::Int64, min_samples_leaf::Int64, min_purity_increase::Float64, min_loss_at_leaf::Float64, n_subrelations::typeof(identity), n_subfeatures::typeof(identity), initConditions::DecisionTree._startAtCenter, useRelationGlob::Bool, rng::Random.MersenneTwister)
+    @ DecisionTree ~/DecisionTree.jl/src/modal-classification/main.jl:137
+  [8] macro expansion
+    @ ./timing.jl:210 [inlined]
+  [9] (::var"#go_tree#122"{NamedTuple{(:initConditions, :useRelationGlob), Tuple{DecisionTree._startAtCenter, Bool}}, Vector{Any}, Float64, String, Symbol, String, var"#display_cm_as_row#121"})(dataset::Tuple{Tuple{MultiFrameFeatModalDataset, Vector{String}}, Tuple{MultiFrameOntologicalDataset, Vector{String}}}, tree_args::NamedTuple{(:loss_function, :min_samples_leaf, :min_purity_increase, :min_loss_at_leaf), Tuple{typeof(DecisionTree.util.entropy), Int64, Float64, Float64}}, rng::Random.MersenneTwister)
+    @ Main ~/DecisionTree.jl/use/runner.jl:644
+ [10] (::var"#go#126"{Int64, Vector{Any}, Vector{Any}, Int64, Bool, var"#go_tree#122"{NamedTuple{(:initConditions, :useRelationGlob), Tuple{DecisionTree._startAtCenter, Bool}}, Vector{Any}, Float64, String, Symbol, String, var"#display_cm_as_row#121"}})(dataset::Tuple{Tuple{MultiFrameFeatModalDataset, Vector{String}}, Tuple{MultiFrameOntologicalDataset, Vector{String}}})
+    @ Main ~/DecisionTree.jl/use/runner.jl:755
+ [11] exec_run(run_name::String, dataset::Tuple{Array{Int64, 4}, Vector{String}}; train_seed::Int64, modal_args::NamedTuple{(:initConditions, :useRelationGlob), Tuple{DecisionTree._startAtCenter, Bool}}, tree_args::Vector{Any}, tree_post_pruning_purity_thresh::Vector{Any}, forest_args::Vector{Any}, forest_runs::Int64, optimize_forest_computation::Bool, test_flattened::Bool, test_averaged::Bool, split_threshold::Float64, data_modal_args::NamedTuple{(:ontology, :test_operators), Tuple{Ontology{DecisionTree.ModalLogic.Interval2D}, Vector{TestOperator}}}, dataset_slice::Vector{Int64}, round_dataset_to_datatype::Type{Float32}, use_ontological_form::Bool, data_savedir::Tuple{String, String}, tree_savedir::String, legacy_gammas_check::Bool, log_level::Base.CoreLogging.LogLevel, timing_mode::Symbol)
+    @ Main ~/DecisionTree.jl/use/runner.jl:843
+ [12] top-level scope
+    @ ~/DecisionTree.jl/use/scan-gandalf.jl:397
+in expression starting at /home/aclai/DecisionTree.jl/use/scan-gandalf.jl:278

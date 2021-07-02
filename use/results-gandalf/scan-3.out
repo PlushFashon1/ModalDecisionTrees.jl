@@ -1,0 +1,64 @@
+  Activating environment at `~/DecisionTree.jl/Project.toml`
+ 1 trees
+ 0 forests 
+Loading history file "./results-gandalf/progress.json"...
+Iteration "Pavia,(1,false,"o_None","TestOpGeq"),1": skipping
+Iteration "Pavia,(3,:flattened,"o_None","TestOpGeq"),1": skipping
+Iteration "Pavia,(3,:averaged,"o_None","TestOpGeq"),1": skipping
+Iteration "Pavia,(3,false,"o_RCC8","TestOpAll"),1": skipping
+Iteration "Pavia,(3,false,"o_RCC5","TestOpAll"),1"...
+● [ 28/06/2021 15:57:19 ] Loading dataset from file ./results-gandalf/cache/dataset_18269c89f3175f9874b730bc34513b1c85d5b39a368cba78e05e14938dfe8b6c.jld...
+
+executing run 'Pavia,(3,false,"o_RCC5","TestOpAll"),1'...
+dataset type = Tuple{Array{Int64, 4}, Vector{String}}
+
+train_seed   = 1
+modal_args   = (initConditions = DecisionTree._startAtCenter(), useRelationGlob = false)
+tree_args    = Any[(loss_function = DecisionTree.util.entropy, min_samples_leaf = 4, min_purity_increase = 0.01, min_loss_at_leaf = 0.3)]
+forest_args  = Any[]
+forest_runs  = 5
+
+split_threshold   = 0.8
+data_modal_args   = (ontology = Ontology{DecisionTree.ModalLogic.Interval2D}(RCC5), test_operators = TestOperator[⫺, ⫹, ⫺₉₀, ⫹₉₀, ⫺₈₀, ⫹₈₀, ⫺₇₀, ⫹₇₀, ⫺₆₀, ⫹₆₀])
+dataset_slice   = [10, 122, 267, 386, 478, 583, 633, 707, 810, 3, 166, 252, 331, 497, 503, 670, 754, 819, 27, 190, 228, 353, 403, 521, 606, 735, 887, 63, 130, 246, 366, 462, 566, 687, 712, 872, 50, 195, 235, 350, 474, 501, 671, 769, 829, 57, 186, 201, 397, 447, 511, 660, 778, 843, 36, 116, 254, 326, 457, 542, 622, 766, 867, 21, 123, 248, 340, 469, 593, 666, 720, 868, 75, 157, 258, 336, 417, 509, 634, 704, 854, 78, 183, 238, 394, 408, 596, 624, 759, 862, 35, 154, 264, 376, 477, 599, 697, 748, 865, 66, 191, 274, 307, 448, 548, 602, 787, 823, 20, 167, 215, 392, 467, 549, 650, 795, 875, 67, 188, 239, 310, 434, 568, 682, 775, 890, 25, 141, 231, 330, 490, 594, 678, 732, 871, 24, 117, 270, 400, 492, 592, 668, 750, 816, 82, 194, 226, 387, 455, 560, 690, 793, 825, 74, 197, 289, 378, 441, 565, 683, 788, 896, 69, 105, 227, 341, 461, 539, 636, 705, 822, 81, 187, 300, 388, 427, 585, 646, 776, 811, 28, 159, 210, 342, 405, 531, 675, 710, 856, 15, 179, 244, 323, 420, 554, 618, 714, 830, 59, 163, 223, 332, 416, 558, 661, 740, 878, 29, 124, 268, 351, 459, 564, 601, 786, 820, 18, 153, 232, 329, 500, 582, 673, 767, 847, 31, 162, 220, 319, 418, 535, 685, 791, 821, 43, 177, 288, 346, 465, 576, 681, 770, 876, 40, 155, 249, 325, 470, 575, 625, 784, 860, 12, 149, 205, 327, 496, 578, 651, 718, 848, 83, 192, 275, 305, 464, 597, 665, 774, 836, 100, 145, 247, 398, 415, 508, 688, 746, 888, 94, 178, 261, 322, 488, 519, 607, 717, 824, 16, 110, 291, 347, 485, 551, 680, 722, 849, 51, 119, 204, 337, 466, 590, 612, 796, 894, 73, 148, 297, 362, 449, 522, 611, 749, 885, 19, 103, 292, 358, 425, 533, 623, 800, 801, 8, 142, 213, 382, 499, 530, 684, 785, 846, 11, 134, 207, 345, 472, 598, 628, 761, 827, 95, 136, 296, 357, 407, 515, 652, 701, 881, 58, 169, 284, 339, 458, 595, 632, 709, 899, 72, 101, 241, 321, 491, 581, 603, 777, 898, 13, 127, 230, 349, 432, 550, 620, 723, 863, 53, 172, 240, 301, 435, 555, 657, 757, 813, 22, 200, 285, 335, 483, 532, 663, 744, 859, 71, 176, 260, 379, 437, 517, 643, 782, 869, 87, 139, 202, 399, 439, 514, 672, 702, 855, 33, 160, 299, 389, 451, 544, 674, 727, 828, 61, 168, 208, 343, 480, 540, 617, 781, 808, 90, 180, 233, 309, 428, 586, 629, 772, 897, 55, 175, 216, 348, 476, 518, 613, 731, 886, 60, 137, 290, 383, 443, 573, 637, 711, 900, 96, 198, 211, 308, 456, 552, 610, 706, 852, 68, 144, 214, 317, 431, 563, 692, 733, 806, 77, 189, 203, 315, 471, 507, 669, 789, 832, 9, 135, 279, 361, 473, 536, 621, 743, 858, 42, 147, 221, 352, 481, 553, 698, 762, 834, 64, 115, 287, 391, 423, 528, 604, 763, 835, 85, 196, 256, 390, 453, 516, 614, 752, 818, 54, 182, 280, 359, 442, 588, 689, 783, 837, 2, 140, 245, 320, 429, 541, 609, 726, 805, 23, 170, 272, 313, 402, 559, 656, 764, 839, 91, 104, 269, 324, 413, 538, 642, 737, 833, 65, 181, 257, 344, 414, 505, 619, 758, 857, 48, 132, 224, 367, 487, 523, 638, 742, 826, 70, 173, 271, 303, 444, 589, 658, 779, 804, 80, 118, 276, 338, 460, 570, 644, 794, 895, 49, 171, 265, 333, 454, 577, 677, 773, 817, 7, 120, 281, 360, 438, 572, 694, 768, 807, 88, 193, 218, 372, 482, 584, 635, 753, 873, 45, 121, 229, 381, 475, 510, 676, 771, 866, 14, 174, 236, 364, 450, 534, 645, 741, 844, 97, 128, 283, 304, 436, 562, 695, 751, 841, 26, 111, 243, 311, 463, 561, 653, 729, 883, 52, 112, 294, 302, 412, 506, 654, 797, 851, 4, 158, 234, 384, 410, 569, 648, 721, 861, 32, 150, 253, 371, 409, 512, 616, 780, 870, 34, 146, 277, 374, 493, 579, 699, 765, 893, 99, 125, 266, 380, 430, 504, 631, 798, 802, 93, 102, 206, 363, 422, 587, 659, 792, 842, 56, 152, 286, 375, 445, 513, 630, 715, 882, 46, 113, 250, 306, 498, 524, 627, 730, 812, 47, 185, 263, 373, 404, 525, 679, 716, 850, 84, 108, 242, 385, 419, 600, 691, 760, 877, 79, 129, 217, 318, 486, 546, 655, 734, 840, 39, 156, 282, 365, 494, 591, 640, 799, 815, 17, 114, 251, 312, 468, 574, 615, 756, 838, 38, 143, 225, 369, 452, 556, 700, 790, 880, 5, 151, 212, 368, 426, 502, 649, 736, 809, 44, 138, 278, 355, 433, 526, 641, 724, 831, 98, 126, 237, 395, 489, 529, 693, 713, 889, 86, 109, 273, 334, 421, 537, 608, 755, 853, 92, 199, 262, 354, 479, 527, 647, 725, 803, 41, 184, 209, 328, 446, 547, 605, 719, 814, 89, 107, 259, 370, 411, 567, 664, 703, 891, 6, 131, 222, 377, 495, 545, 639, 708, 845, 1, 106, 295, 314, 401, 557, 667, 747, 864, 76, 161, 255, 396, 406, 520, 686, 738, 879, 37, 164, 298, 393, 484, 543, 696, 739, 884, 30, 133, 219, 356, 440, 580, 626, 745, 874, 62, 165, 293, 316, 424, 571, 662, 728, 892]
+
+Frame 1/1
+● [ 28/06/2021 15:57:51 ] Computing stump_fmd...
+┌ LogLevel(-500): OntologicalDataset -> FeatModalDataset
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:12
+┌ LogLevel(-500): Instance 1/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 361/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 723/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 180/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): Instance 542/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:25
+┌ LogLevel(-500): FeatModalDataset -> StumpFeatModalDataset
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:358
+┌ LogLevel(-500): Instance 1/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 361/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 723/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 180/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+┌ LogLevel(-500): Instance 542/900
+└ @ DecisionTree.ModalLogic ~/DecisionTree.jl/src/ModalLogic/BuildStumpSupport.jl:401
+27796.791767 seconds (118.63 G allocations: 13.642 TiB, 84.17% gc time, 0.01% compilation time)
+● [ 28/06/2021 23:41:08 ] Computed stump_fmd in 08:43:17
+● [ 28/06/2021 23:41:09 ] Saving stump_fmd to file ./results-gandalf/cache/stump_fmd_a58e81610171c0f290945c3dc00e92568303edab454a70aea42410d480b37a98.jld...
+
+signal (7): Bus error
+in expression starting at /home/aclai/DecisionTree.jl/use/scan-gandalf.jl:278
+unsafe_store! at ./pointer.jl:118 [inlined]
+unsafe_store! at ./pointer.jl:118 [inlined]
+jlunsafe_store! at /home/aclai/.julia/packages/JLD2/1i6ZM/src/JLD2.jl:42 [inlined]
+jlunsafe_store! at /home/aclai/.julia/packages/JLD2/1i6ZM/src/misc.jl:15 [inlined]
+_write at /home/aclai/.julia/packages/JLD2/1i6ZM/src/mmapio.jl:190 [inlined]
+jlwrite at /home/aclai/.julia/packages/JLD2/1i6ZM/src/misc.jl:27 [inlined]
+write_datatype_message at /home/aclai/.julia/packages/JLD2/1i6ZM/src/datasets.jl:484
+write_dataset at /home/aclai/.julia/p

@@ -150,8 +150,10 @@ legacy_gammas_check = false # true
 exec_dataseed = 1:10
 
 # exec_dataset_name = ["Salinas", "Salinas-A", "PaviaCentre", "IndianPines", "Pavia"]
-exec_dataset_name = ["Pavia", "Salinas-A", "PaviaCentre", "IndianPines", "Salinas"]
+exec_dataset_name = ["Pavia", "IndianPines", "PaviaCentre"]
 exec_windowsize_flattened_ontology_test_operators = [(1,false,"o_None","TestOpGeq"),(3,:flattened,"o_None","TestOpGeq"),(3,:averaged,"o_None","TestOpGeq"),(3,false,"o_RCC8","TestOpAll"),(3,false,"o_RCC5","TestOpAll")]
+#exec_windowsize_flattened_ontology_test_operators = [(1,false,"o_None","TestOpGeq"),(3,:flattened,"o_None","TestOpGeq"),(3,:averaged,"o_None","TestOpGeq"),(3,false,"o_RCC8","TestOpAll")]
+#exec_windowsize_flattened_ontology_test_operators = [(1,false,"o_None","TestOpGeq"),(3,:flattened,"o_None","TestOpGeq"),(3,:averaged,"o_None","TestOpGeq"),(3,false,"o_RCC8","TestOpAll"),(3,false,"o_RCC5","TestOpAll")]
 # exec_windowsize_flattened_ontology_test_operators = [(1,false,"o_None","TestOpGeq"),(3,:flattened,"o_None","TestOpGeq"),(3,:averaged,"o_None","TestOpGeq"),(3,false,"o_RCC8","TestOp"),(3,false,"o_RCC5","TestOp")]
 # exec_windowsize_flattened_ontology_test_operators = [(3,:averaged,"o_None","TestOpGeq")]
 # exec_windowsize_flattened_ontology_test_operators = [(3,false,"o_RCC8","TestOp")]
@@ -191,7 +193,7 @@ exec_ranges_dict = (
 	# dataseed                                     = exec_dataseed,
 )
 
-n_samples_per_label = 3
+n_samples_per_label = 100
 
 dataset_function = (
 	(windowsize,flattened,ontology,test_operators),
@@ -202,7 +204,7 @@ dataset_function = (
 					stratify = false,
 					# stratify = true,
 					flattened = flattened,
-					n_attributes = 3,
+					# n_attributes = 3,
 					# rng = dataset_rng)
 					rng = copy(main_rng))
 
