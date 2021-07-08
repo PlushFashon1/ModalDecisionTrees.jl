@@ -1,0 +1,26 @@
+  Activating environment at `~/DecisionTree.jl/Project.toml`
+ 1 trees
+ 0 forests 
+Loading history file "./gandalf/progress.json"...
+Iteration "Pavia,(1,false,"o_None","TestOpGeq")": skipping
+Iteration "Pavia,(3,:flattened,"o_None","TestOpGeq")": skipping
+Iteration "Pavia,(3,:averaged,"o_None","TestOpGeq")": skipping
+Iteration "Pavia,(3,false,"o_RCC8","TestOpAll")": skipping
+Iteration "Pavia,(3,false,"o_RCC5","TestOpAll")": skipping
+Iteration "IndianPines,(1,false,"o_None","TestOpGeq")": skipping
+Iteration "IndianPines,(3,:flattened,"o_None","TestOpGeq")": skipping
+Iteration "IndianPines,(3,:averaged,"o_None","TestOpGeq")": skipping
+Iteration "IndianPines,(3,false,"o_RCC8","TestOpAll")": skipping
+Iteration "IndianPines,(3,false,"o_RCC5","TestOpAll")": skipping
+Iteration "PaviaCentre,(1,false,"o_None","TestOpGeq")": skipping
+Iteration "PaviaCentre,(3,:flattened,"o_None","TestOpGeq")": skipping
+Iteration "PaviaCentre,(3,:averaged,"o_None","TestOpGeq")": skipping
+Iteration "PaviaCentre,(3,false,"o_RCC8","TestOpAll")": skipping
+Iteration "PaviaCentre,(3,false,"o_RCC5","TestOpAll")": skipping
+Iteration "Salinas,(1,false,"o_None","TestOpGeq")": skipping
+Iteration "Salinas,(3,:flattened,"o_None","TestOpGeq")": skipping
+Iteration "Salinas,(3,:averaged,"o_None","TestOpGeq")": skipping
+Iteration "Salinas,(3,false,"o_RCC8","TestOpAll")": skipping
+Iteration "Salinas,(3,false,"o_RCC5","TestOpAll")"...
+● [ 08/07/2021 14:25:39 ] Loading dataset from file ./gandalf/cache/dataset_59ee58d2067fdc2332ed1e86531466658391cb67bc2e4d536fc59e556ffaa20b.jld...
+Dataseeds = [4, 5, 6, 7, 8, 9, 10]
